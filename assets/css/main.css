@@ -3897,7 +3897,7 @@ input[type=color] {
   margin-right: 20px;
 }
 .it-testimonial-rate i {
-  color: var(--it-theme-2);
+  color: yellow;
   display: inline-block;
   margin: 0 1px;
   font-size: 15px;
@@ -10038,7 +10038,7 @@ td.product-thumbnail img {
 }
 @media only screen and (min-width: 1600px) and (max-width: 1800px) {
   .it-about-2-shape-4 {
-    left: 6%;
+    left: 4%;
   }
 }
 @media only screen and (min-width: 1400px) and (max-width: 1599px) {
@@ -12149,4 +12149,66 @@ ease;
   color: #556270;
   line-height: 1.6;
   margin: 0;
+}
+
+.faqs-images{
+      width: 400px;
+    height: 150px;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.brave-steps {
+    padding: 70px 20px;
+    background: #f7fcf7;
+}
+
+.steps-wrapper {
+    /* max-width: 900px; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.step-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    padding: 20px 25px;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e0e7e0;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    transition: .3s ease;
+}
+
+.step-box:hover {
+    transform: translateX(6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.step-number {
+    background: #2e7d3220;
+    color: #2e7d32;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 10px;
+    min-width: 70px;
+    text-align: center;
+}
+
+.step-content h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #1a3f1a;
+}
+
+.step-content p {
+    color: #555;
+    margin: 0;
+    line-height: 1.6;
 }
