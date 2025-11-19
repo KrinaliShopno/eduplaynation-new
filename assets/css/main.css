@@ -45,15 +45,16 @@
 /* 01. THEME DEFAULT CSS START
 /*----------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ruluko&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ruluko&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Schoolbell&display=swap" rel="stylesheet'); */
 :root {
   /**
   @font family declaration
   */
   /* --it-ff-body: "MATTEHEKFREE", sans-serif; */
-  --it-ff-body: "Ruluko", sans-serif;
-  --it-ff-heading: "Ruluko", sans-serif !important;
-  --it-ff-schoolbell:"Ruluko", sans-serif !important;
+  --it-ff-body: "Jost";
+  --it-ff-heading: "Jost" !important;
+  --it-ff-schoolbell:"Jost" !important;
   --it-ff-fontawesome: Font Awesome 6 Pro;
   /**
   @color declaration
@@ -66,15 +67,22 @@
   --it-theme-1: #3B5F51;
   --it-theme-2: #487339;
 }
-     /* @font-face {
+    /* @font-face {
+            font-family: 'TwentiethCenturyforKenmoreSemibold';
+            src: url('assets/TwentiethCenturyforKenmoreSemibold.ttf') format("truetype");
+        }
+        *{
+            font-family: 'TwentiethCenturyforKenmoreSemibold' !important;
+        } */
+
+
+     @font-face {
             font-family: 'MATTEKEK';
             src: url('/assets/MATTEHEKFREE-BF64aed90350aea.ttf') format('truetype');
             font-weight: 300;
             font-style: normal; 
       }
-      *{
-         font-family: 'MATTEKEK', sans-serif !important;
-      } */
+    
 /* i, .fa-light {
     font-family: "Font Awesome 6 Pro" !important;
     font-weight: 300 !important;
@@ -1901,7 +1909,7 @@ input[type=color] {
   font-weight: 600;
   padding: 21px 25px;
   font-family: var(--it-ff-heading);
-  color: var(--it-common-black);
+  color: var(--it-common-white);
   position: relative;
   width: 100%;
   text-align: left;
@@ -1937,7 +1945,7 @@ input[type=color] {
   font-size: 16px;
   opacity: 1;
   transform: translateY(-50%);
-  color: var(--it-common-black);
+  color: var(--it-common-white);
 }
 .it-custom-accordion .accordion-buttons.collapsed::after {
   content: "\f067";
@@ -2006,6 +2014,7 @@ input[type=color] {
 }
 .it-custom-accordion-style-3 .accordion-body p {
   margin-right: 40px;
+  color: var(--it-common-white);
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .it-custom-accordion-style-3 .accordion-body p {
@@ -3049,8 +3058,14 @@ input[type=color] {
   line-height: 1.1;
 }
 .it-header-logo {
-  font-size: 30px;
+  font-size: 40px;
   color: var(--it-common-black);
+  font-family: "MATTEKEK";
+}
+.it-footer-logo {
+    font-size: 40px;
+  color: var(--it-common-white);
+  font-family: "MATTEKEK";
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .it-hero-title {
@@ -3884,8 +3899,8 @@ input[type=color] {
   }
 }
 .it-testimonial-pt {
-  padding-top: 50px;
-  padding-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 80px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
   .it-testimonial-pt {
@@ -12420,4 +12435,66 @@ ease;
     .it-testimonial-content {
         padding: 25px;
     }
+}
+/* --- CLOUD BACKGROUND SECTION (MATCHES TESTIMONIAL STYLE) --- */
+.cloud-bg-section {
+    position: relative;
+    /* background: linear-gradient(180deg, #f6f9ff 0%, #edf2ff 100%); */
+    background-image: url("/assets/img/testimonial/image\ \(18\).png");
+    background-repeat: no-repeat;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    overflow: hidden;
+    border-radius: 40px;
+    background-position: center center;
+    background-size: contain;
+}
+.it-faq-wrap{
+  width: 75%;
+  margin: auto;
+}
+/* Shapes */
+.cloud-bg-section img:not(.faqs-images) {
+    position: absolute;
+    z-index: 1;
+}
+
+/* Same style as testimonial shapes */
+.cloud-shape-1 {
+    position: absolute;
+    top: -20px;
+    right: 60px;
+    opacity: .25;
+}
+
+.cloud-shape-2 {
+    position: absolute;
+    bottom: 40px;
+    left: 80px;
+    opacity: .30;
+}
+
+.cloud-shape-3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .18;
+}
+
+.cloud-shape-4 {
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    opacity: .20;
+}
+
+/* Optional Floating Animation */
+.cloud-bg-section img {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
 }
