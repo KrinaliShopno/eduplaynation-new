@@ -1433,7 +1433,7 @@ input[type=color] {
 }
 
 .theme-bg {
-  background: var(--it-theme-1);
+  background: var(--it-theme-2);
 }
 
 .theme-bg-2 {
@@ -2634,6 +2634,7 @@ input[type=color] {
 }
 .it-header-menu > nav > ul > li:hover > a {
   color: var(--it-common-white);
+  background-color: var(--it-theme-2);
 }
 .it-header-menu > nav > ul > li:hover > a::after {
   width: 100%;
@@ -11692,7 +11693,7 @@ position: absolute;
 }
 .it-footer-social.social-color a:hover {
   color: var(--it-theme-1);
-  background-color: var(--it-common-black);
+  background-color: var(--it-common-white);
 }
 .it-footer-list-2 ul li {
   list-style-type: none;
@@ -11829,7 +11830,7 @@ position: absolute;
   margin-right: 30px;
   text-align: center;
   color: var(--it-common-white);
-  background-color: var(--it-theme-1);
+  background-color: var(--it-theme-2);
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .it-footer-contact-icon > span {
