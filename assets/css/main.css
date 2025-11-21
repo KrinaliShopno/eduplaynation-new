@@ -91,6 +91,16 @@
     font-family: "Font Awesome 6 Pro" !important;
     font-weight: 300 !important;
 } */
+ .fa-light, .fal {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 300;
+    font-size: 25px;
+}
+.fa-regular, .far {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 400;
+     font-size: 22px;
+}
 @media (min-width: 1400px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     max-width: 1350px;
@@ -2434,7 +2444,7 @@ input[type=color] {
 .it-section-title {
   font-size: 45px;
   font-weight: 600;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   margin-bottom: 0;
 }
 .it-section-title span {
@@ -11213,7 +11223,7 @@ td.product-thumbnail img {
 .it-newsletter-2-ptb {
   padding: 100px 0;
   margin-top: 90px;
-  margin-bottom: 15%;
+  margin-bottom: 10%;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .it-newsletter-2-ptb {
