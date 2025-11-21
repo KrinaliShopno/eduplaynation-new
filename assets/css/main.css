@@ -44,17 +44,16 @@
 /*----------------------------------------*/
 /* 01. THEME DEFAULT CSS START
 /*----------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ruluko&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ruluko&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Schoolbell&display=swap" rel="stylesheet'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ruluko&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ruluko&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap'); */
 :root {
   /**
   @font family declaration
   */
   /* --it-ff-body: "MATTEHEKFREE", sans-serif; */
-  --it-ff-body: "Jost";
-  --it-ff-heading: "Jost" !important;
-  --it-ff-schoolbell:"Jost" !important;
+  --it-ff-body: "Twentieth-Century";
+  --it-ff-heading: "Twentieth-Century" !important;
+  --it-ff-schoolbell:"Twentieth-Century" !important;
   --it-ff-fontawesome: Font Awesome 6 Pro;
   /**
   @color declaration
@@ -67,12 +66,13 @@
   --it-theme-1: #3B5F51;
   --it-theme-2: #487339;
 }
-    /* @font-face {
-            font-family: 'TwentiethCenturyforKenmoreSemibold';
-            src: url('assets/TwentiethCenturyforKenmoreSemibold.ttf') format("truetype");
+    @font-face {
+            font-family: 'Twentieth-Century';
+            src: url('/assets/Twentieth-Century.ttf') format("truetype");
+             /* font-weight: 600; */
         }
-        *{
-            font-family: 'TwentiethCenturyforKenmoreSemibold' !important;
+        /* *{
+            font-family: 'Twentieth-Century' !important;
         } */
 
 
@@ -107,6 +107,7 @@ body {
   color: var(--it-text-body);
   line-height: 32px;
   overflow-x: hidden;
+  letter-spacing: 1.1px;
 }
 
 body, html {
@@ -172,8 +173,8 @@ ul {
 
 p {
   color: var(--it-text-body);
-  font-weight: 400;
-  font-size: 19px;
+  font-weight: 500;
+  font-size: 18px;
   line-height: 34px;
 }
 
@@ -2438,7 +2439,20 @@ input[type=color] {
 }
 .it-section-title span {
   color: var(--it-theme-2);
+  font-family: "MATTEKEK";
+  font-size: 45px;
 }
+.edu-1{
+    color: var(--it-common-white) !important;
+  font-family: "MATTEKEK";
+  font-size: 45px;
+}
+.edu-2{
+    color: var(--it-theme-2) !important;
+  font-family: var(--it-ff-body) !important;
+  font-size: 45px;
+}
+
 @media only screen and (min-width: 1400px) and (max-width: 1599px) {
   .it-section-title {
     font-size: 42px;
@@ -11273,8 +11287,8 @@ td.product-thumbnail img {
 }
 .it-newsletter-2-shape-2 {
   position: absolute;
-  right: 31%;
-  bottom: 7%;
+right: 25%;
+    bottom: 8%;
   animation: itswing 1.4s forwards infinite alternate;
   transform-origin: top right;
 }
@@ -11307,10 +11321,11 @@ td.product-thumbnail img {
   }
 }
 .it-newsletter-2-shape-4 {
-  position: absolute;
-  right: 7%;
-  bottom: -8%;
-  animation: ittranslateX2 4s infinite alternate;
+position: absolute;
+    right: 25%;
+    bottom: 33%;
+    animation: ittranslateX2 4s infinite alternate;
+    width: 280px;
 }
 @media only screen and (min-width: 1600px) and (max-width: 1800px), only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px) {
   .it-newsletter-2-shape-4 {
@@ -12154,7 +12169,7 @@ ease;
 }
 
 .jam-title {
-    font-size: 34px;
+    font-size: 45px;
     font-weight: 700;
     color: #253542;
     margin-bottom: 10px;
@@ -12593,7 +12608,7 @@ ease;
     flex: 1;
 }
 .t-text{
-color: #fff;
+    color: #fff;
     font-size: 18px;
     line-height: 1.6;
     font-weight: 400;
@@ -12602,6 +12617,7 @@ color: #fff;
 .t-author{
   color: #FFF;
    font-size: 22px;
+   font-weight: 600;
 }
 
 .t-text-final {
