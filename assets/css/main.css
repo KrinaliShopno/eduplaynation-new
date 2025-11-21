@@ -175,7 +175,7 @@ p {
   color: var(--it-text-body);
   font-weight: 500;
   font-size: 18px;
-  line-height: 34px;
+  line-height: 25px;
 }
 
 .z-index {
@@ -12044,7 +12044,6 @@ position: absolute;
   color: #333;
   max-width: 900px;
   margin: 0 auto 45px auto;
-  line-height: 1.7;
 }
 
 /* BOX GRID */
@@ -12176,7 +12175,7 @@ ease;
 }
 
 .jam-subtitle {
-    font-size: 16px;
+    font-size: 18px;
     color: #556270;
     max-width: 700px;
     margin: auto;
