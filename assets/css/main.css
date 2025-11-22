@@ -11364,6 +11364,7 @@ position: absolute;
   top: -21%;
   left: 0;
   z-index: -2;
+  width: 100%;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .it-newsletter-2-shape-6 {
@@ -11375,6 +11376,7 @@ position: absolute;
   bottom: -25%;
   left: 0;
   z-index: -2;
+   width: 100%;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .it-newsletter-2-shape-7 {
