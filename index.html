@@ -546,7 +546,7 @@
 
 
       <!-- feature-area-strat -->
-      <div class="it-feature-area pt-120 pb-0">
+      <div class="it-feature-area pt-xl-5 pt-lg-5 pt-md-5 pt-sm-2 pt-5 pb-0">
          <div class="container">
             <div class="row">
                <div class="col-xl-3 col-lg-4 col-md-6 mb-30 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
@@ -787,7 +787,7 @@
                      </div>
                   </div>
                </div> -->
-               <div class="col-xl-12 col-lg-6 wow itfadeRight" data-wow-duration=".9s" data-wow-delay=".7s">
+               <div class="col-xl-12 col-lg-12 wow itfadeRight" data-wow-duration=".9s" data-wow-delay=".7s">
                   <div class="it-about-2-right">
                      <h3 class="it-section-title pb-30 text-center text-white">Why Teachers Love
                         <span class="edu-1">eduPLAYnation ?</span>
@@ -824,7 +824,7 @@
                            </svg>
                         </span>
                      </a> -->
-                     <div class="col-xl-12 col-lg-8 order-0 order-lg-1">
+                     <div class="col-xl-12 col-lg-12 order-0 order-lg-1">
                         <div class="it-about-slider swiper-container">
                            <div class="swiper-wrapper">
 
@@ -990,7 +990,7 @@
 
       <!-- BRAVE games section -->
       <!-- testimonial-area-start -->
-      <div class="it-testimonial-area it-testimonial-style-2  mt-0 mb-145">
+      <div class="it-testimonial-area it-testimonial-style-2  mt-0  ">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
@@ -2290,28 +2290,50 @@ YES! SUBSCRIBE
    <script src="assets/js/ajax-form.js"></script>
    <script src="assets/js/main.js"></script>
 
-   <script>
-      var aboutSwiper = new Swiper(".it-about-slider", {
-         loop: true,
+<script>
+var aboutSwiper = new Swiper(".it-about-slider", {
+   loop: true,
+   centeredSlides: true,
+   autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+   },
+   navigation: {
+      nextEl: ".about-next",
+      prevEl: ".about-prev",
+   },
+   pagination: {
+      el: ".about-pagination",
+      clickable: true,
+   },
+   speed: 700,
+
+   // ⭐ ADD RESPONSIVE SETTINGS ⭐
+   breakpoints: {
+      0: {          // Mobile
          slidesPerView: 1,
-         centeredSlides: true,
-         autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-         },
-         navigation: {
-            nextEl: ".about-next",
-            prevEl: ".about-prev",
-         },
-         pagination: {
-            el: ".about-pagination",
-            clickable: true,
-         },
-         speed: 700,
-      });
+         spaceBetween: 10,
+      },
+      576: {        // Small Screen
+         slidesPerView: 1,
+         spaceBetween: 20,
+      },
+      768: {        // Tablet
+         slidesPerView: 1,
+         spaceBetween: 25,
+      },
+      992: {        // Laptop
+         slidesPerView: 1,
+         spaceBetween: 30,
+      },
+      1200: {       // Desktop
+         slidesPerView: 1,
+         spaceBetween: 40,
+      },
+   }
+});
+</script>
 
-
-   </script>
 
 </body>
 
