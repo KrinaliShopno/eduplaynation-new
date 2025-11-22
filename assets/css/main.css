@@ -101,9 +101,15 @@
     font-weight: 400;
      font-size: 22px;
 }
+
 @media (min-width: 1400px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     max-width: 1350px;
+  }
+}
+@media (min-width: 1950px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1650px;
   }
 }
 /*---------------------------------
@@ -3959,11 +3965,20 @@ input[type=color] {
   overflow: hidden;
   margin-right: 20px;
 }
+.edumaintab{
+  font-family: "MATTEKEK";
+}
 .it-testimonial-rate i {
   color: yellow;
   display: inline-block;
   margin: 0 1px;
   font-size: 15px;
+}
+.it-Teachers-rate{
+    color: yellow;
+  display: inline-block;
+  margin: 0 1px;
+  font-size: 13px;
 }
 .it-testimonial-section-title {
   /* padding-bottom: 60px; */
@@ -12335,6 +12350,7 @@ ease;
     border: 1px solid #e0e7e0;
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
     transition: .3s ease;
+    height: 135px;
 }
 
 .step-box:hover {
