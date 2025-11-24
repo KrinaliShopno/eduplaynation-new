@@ -12842,14 +12842,14 @@ ease;
 .about-next {
     position: absolute;
 right: 18%;
-    top: 55%;
+    top: 50%;
     transform: translateY(-50%);
     z-index: 10;
 }
 .about-prev {
     position: absolute;
 left: 16%;
-    top: 55%;
+    top: 50%;
     transform: translateY(-50%);
     z-index: 10;
 }
