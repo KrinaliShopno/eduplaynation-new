@@ -13375,14 +13375,16 @@ display: none;
 ease;
 }
 .series-text{
-  color: black;
+    color: #ffffff;
     position: relative;
-    bottom: 44px;
+    bottom: 67px;
+    right: 29px;
     font-size: 17px;
+    font-weight: 500;
 
 }
 .series-badge img {
-  width: 200px;
+  width: 155px;
   filter: drop-shadow(2px 4px 6px rgb(153, 153, 153));
 }
 /* Hover — same as tag color */
@@ -13468,4 +13470,27 @@ ease;
     background: var(--it-theme-2);
     transform: translateY(-2px);
     color: #FFF;
+}
+.clamp-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 75px;
+    transition: 0.3s ease;
+}
+
+/* Expanded text */
+.clamp-text.expanded {
+    -webkit-line-clamp: unset;
+    max-height: none;
+}
+/* Read More button */
+.read-more-btn {
+    color: var(--it-theme-2);
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 5px;
+    display: inline-block;
 }
