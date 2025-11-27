@@ -303,11 +303,12 @@ input {
   padding: 0 20px;
   line-height: 58px;
   font-size: 19px;
-  color: var(--it-common-black);
+  color: var(--it-common-white);
   text-transform: capitalize;
 }
 input::-webkit-input-placeholder {
   color: #898989;
+  
 }
 input:-moz-placeholder {
   color: #898989;
@@ -318,7 +319,10 @@ input::-moz-placeholder {
 input:-ms-input-placeholder {
   color: #898989;
 }
-
+.it-student-regiform-button{
+  width: 15%;
+  margin: 0 auto;
+}
 textarea {
   outline: none;
   width: 100%;
@@ -7513,7 +7517,7 @@ td.product-thumbnail img {
 }
 
 .it-student-bg {
-  background-color: #E7F8FE;
+  /* background-color: #E7F8FE; */
   padding: 100px 70px;
 }
 @media (max-width: 767px) {
@@ -11446,6 +11450,13 @@ position: absolute;
   top: -17%;
   left: 37%;
   z-index: -1;
+}
+.it-newsletter-4 {
+    position: absolute;
+  top: 2%;
+  left: 37%;
+  z-index: -1;
+  width: 400px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .it-newsletter-2-shape-5 {
