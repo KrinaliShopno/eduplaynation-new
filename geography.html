@@ -30,7 +30,6 @@
     <link rel="stylesheet" href="assets/css/spacing.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
 </head>
 
 <body>
@@ -612,7 +611,7 @@
                                     two patents to two different entrepreneurs for one very similar concept. This begs
                                     the question: does everyone have a shot at free parking?
                                 </p>
-<span class="read-more-btn">Read More</span>
+                                <span class="read-more-btn">Read More</span>
                                 <ul class="jam-details">
                                     <li><strong>Level:</strong> Grades 4–5</li>
                                     <li><strong>Duration:</strong> 30 minutes</li>
@@ -620,16 +619,28 @@
                                 </ul>
 
                                 <div class="jam-actions">
-                                    <a href="jams.html" class="jam-btn preview">
+                                    <!-- <a  href="#" class="jam-btn preview"  id="openPreviewBtn">
                                         <i class="bi bi-eye"></i>
-                                        View Series
-                                    </a>
-
+                                        Preview
+                                    </a> -->
+                                    <button class="jam-btn preview" id="openPreviewBtn"
+                                        onclick="previewpdf('assets/img/pdf/T3.JAM 1A-G Game Theory.pdf','assets/img/pdf/booklet JAM 1. GT.pdf')">
+                                        Preview</button>
+                                    <!-- Modal Popup -->
+                                    <div id="pdfModal" class="modal">
+                                        <div class="modal-content">
+                                            <span class="close-btn" id="closeBtn">&times;</span>
+                                            <h2 class="modal-title">PDF First Page Preview</h2>
+                                            <div class="loading" id="loading">Loading PDF</div>
+                                            <div class="pdf-preview" id="pdfPreview"></div>
+                                        </div>
+                                    </div>
                                     <a href="#" class="jam-btn download" data-bs-toggle="modal"
                                         data-bs-target="#downloadModal">
                                         <i class="bi bi-download"></i> Download
                                     </a>
                                 </div>
+
                             </div>
 
                             <div class="it-team-2-shape-1">
@@ -660,7 +671,7 @@
                                     by creating one timeline based on multiple sets of cause and effect. Called to
                                     testify—guilty or innocent—how in God’s name can one man defend science?
                                 </p>
-<span class="read-more-btn">Read More</span>
+                                <span class="read-more-btn">Read More</span>
                                 <ul class="jam-details">
                                     <li><strong>Level:</strong> Grades 4–5</li>
                                     <li><strong>Duration:</strong> 30 minutes</li>
@@ -668,11 +679,13 @@
                                 </ul>
 
                                 <div class="jam-actions">
-                                    <a href="jams.html" class="jam-btn preview">
+                                    <!-- <a href="jams.html" class="jam-btn preview">
                                         <i class="bi bi-eye"></i>
-                                        View Series
-                                    </a>
-
+                                        Preview
+                                    </a> -->
+                                    <button class="jam-btn preview"
+                                        onclick="previewpdf('assets/img/pdf/T3.JAM 2A-G context.pdf','assets/img/pdf/JAM booklet 2. context.pdf')">
+                                        Preview</button>
                                     <a href="#" class="jam-btn download" data-bs-toggle="modal"
                                         data-bs-target="#downloadModal">
                                         <i class="bi bi-download"></i> Download
@@ -715,11 +728,13 @@
                                     <li><strong>Format:</strong> Interactive + PDF</li>
                                 </ul>
                                 <div class="jam-actions">
-                                    <a href="jams.html" class="jam-btn preview">
+                                    <!-- <a href="jams.html" class="jam-btn preview">
                                         <i class="bi bi-eye"></i>
-                                        View Series
-                                    </a>
-
+                                        Preview
+                                    </a> -->
+                                    <button class="jam-btn preview"
+                                        onclick="previewpdf('assets/img/pdf/T3. JAM.3.A-G perspective.pdf','assets/img/pdf/booklet JAM 3.pdf')">
+                                        Preview</button>
                                     <a href="#" class="jam-btn download" data-bs-toggle="modal"
                                         data-bs-target="#downloadModal">
                                         <i class="bi bi-download"></i> Download
@@ -758,7 +773,7 @@
                                     arranged to purchase France’s claim on Louisane that it would honor the natural
                                     rights of the Native nations who lived in those places since time immemorial?
                                 </p>
-<span class="read-more-btn">Read More</span>
+                                <span class="read-more-btn">Read More</span>
                                 <ul class="jam-details">
                                     <li><strong>Level:</strong> Grades 4–5</li>
                                     <li><strong>Duration:</strong> 30 minutes</li>
@@ -768,7 +783,7 @@
                                 <div class="jam-actions">
                                     <a href="jams.html" class="jam-btn preview">
                                         <i class="bi bi-eye"></i>
-                                        View Series
+                                        Preview
                                     </a>
 
                                     <a href="#" class="jam-btn download" data-bs-toggle="modal"
@@ -797,7 +812,7 @@
                                     their independence from Spain. And with extraordinary consequences. How did they do
                                     it?
                                 </p>
-<span class="read-more-btn">Read More</span>
+                                <span class="read-more-btn">Read More</span>
 
                                 <ul class="jam-details">
                                     <li><strong>Level:</strong> Grades 4–5</li>
@@ -808,7 +823,7 @@
                                 <div class="jam-actions">
                                     <a href="jams.html" class="jam-btn preview">
                                         <i class="bi bi-eye"></i>
-                                        View Series
+                                        Preview
                                     </a>
 
                                     <a href="#" class="jam-btn download" data-bs-toggle="modal"
@@ -847,7 +862,7 @@
                                 <div class="jam-actions">
                                     <a href="jams.html" class="jam-btn preview">
                                         <i class="bi bi-eye"></i>
-                                        View Series
+                                        Preview
                                     </a>
 
                                     <a href="#" class="jam-btn download" data-bs-toggle="modal"
@@ -877,7 +892,7 @@
                                     from the Union, and the other desperately trying to preserve and expand it. But did
                                     US Congress have the financial resources to accomplish their goals?
                                 </p>
-<span class="read-more-btn">Read More</span>
+                                <span class="read-more-btn">Read More</span>
                                 <ul class="jam-details">
                                     <li><strong>Level:</strong> Grades 4–5</li>
                                     <li><strong>Duration:</strong> 30 minutes</li>
@@ -887,7 +902,7 @@
                                 <div class="jam-actions">
                                     <a href="jams.html" class="jam-btn preview">
                                         <i class="bi bi-eye"></i>
-                                        View Series
+                                        Preview
                                     </a>
 
                                     <a href="#" class="jam-btn download" data-bs-toggle="modal"
@@ -915,7 +930,7 @@
                                     Scientists believe that at one time there were between 30 and 60 million bison
                                     roaming the Great Plains. But what does that have to do with us today? Everything.
                                 </p>
-<span class="read-more-btn">Read More</span>
+                                <span class="read-more-btn">Read More</span>
                                 <ul class="jam-details">
                                     <li><strong>Level:</strong> Grades 4–5</li>
                                     <li><strong>Duration:</strong> 30 minutes</li>
@@ -925,7 +940,7 @@
                                 <div class="jam-actions">
                                     <a href="jams.html" class="jam-btn preview">
                                         <i class="bi bi-eye"></i>
-                                        View Series
+                                        Preview
                                     </a>
 
                                     <a href="#" class="jam-btn download" data-bs-toggle="modal"
@@ -955,7 +970,7 @@
                                     branches. Privileges not stated go to the states. Still, 574 Native nations exist
                                     within the U.S. Where do they fit in?
                                 </p>
-<span class="read-more-btn">Read More</span>
+                                <span class="read-more-btn">Read More</span>
                                 <ul class="jam-details">
                                     <li><strong>Level:</strong> Grades 4–5</li>
                                     <li><strong>Duration:</strong> 30 minutes</li>
@@ -965,7 +980,7 @@
                                 <div class="jam-actions">
                                     <a href="jams.html" class="jam-btn preview">
                                         <i class="bi bi-eye"></i>
-                                        View Series
+                                        Preview
                                     </a>
 
                                     <a href="#" class="jam-btn download" data-bs-toggle="modal"
@@ -995,7 +1010,7 @@
                                     assess and test the value of anyplace so humans are prepared to protect their safe
                                     places.
                                 </p>
-<span class="read-more-btn">Read More</span>
+                                <span class="read-more-btn">Read More</span>
                                 <ul class="jam-details">
                                     <li><strong>Level:</strong> Grades 4–5</li>
                                     <li><strong>Duration:</strong> 30 minutes</li>
@@ -1005,7 +1020,7 @@
                                 <div class="jam-actions">
                                     <a href="jams.html" class="jam-btn preview">
                                         <i class="bi bi-eye"></i>
-                                        View Series
+                                        Preview
                                     </a>
 
                                     <a href="#" class="jam-btn download" data-bs-toggle="modal"
@@ -1564,24 +1579,113 @@
     <script src="assets/js/imagesloaded-pkgd.js"></script>
     <script src="assets/js/ajax-form.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".read-more-btn").forEach(btn => {
-        btn.addEventListener("click", function () {
-            let desc = this.previousElementSibling;
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".read-more-btn").forEach(btn => {
+                btn.addEventListener("click", function () {
+                    let desc = this.previousElementSibling;
 
-            desc.classList.toggle("expanded");
+                    desc.classList.toggle("expanded");
 
-            if (desc.classList.contains("expanded")) {
-                this.textContent = "Read Less";
-            } else {
-                this.textContent = "Read More";
-            }
+                    if (desc.classList.contains("expanded")) {
+                        this.textContent = "Read Less";
+                    } else {
+                        this.textContent = "Read More";
+                    }
+                });
+            });
         });
-    });
-});
-</script>
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script>
+        function previewpdf(url1, url2) {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+            // Your PDF paths
+            // const pdfPaths = [
+            //     'assets/img/pdf/T3.JAM 1A-G Game Theory.pdf',
+            //     'assets/img/pdf/T3.JAM 1A-G Game Theory.pdf',
+            // ];
+            const pdfPaths = [
+                url1,
+                url2,
+            ];
+            const openPreviewBtn = document.getElementById('openPreviewBtn');
+            const modal = document.getElementById('pdfModal');
+            const closeBtn = document.getElementById('closeBtn');
+            const loading = document.getElementById('loading');
+            const pdfPreview = document.getElementById('pdfPreview');
+            // Open modal and load PDFs
+            // openPreviewBtn.addEventListener('click', async function () {
+            modal.style.display = 'block';
+            loading.style.display = 'block';
+            pdfPreview.innerHTML = '';
+            // await loadPDFsFromPaths();
+            loadPDFsFromPaths();
+            // });
+            // Close modal
+            closeBtn.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+            // Close modal when clicking outside
+            window.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            // Close modal with Escape key
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                }
+            });
+            async function loadPDFsFromPaths() {
+                try {
+                    for (let i = 0; i < pdfPaths.length; i++) {
+                        await renderPDFFirstPage(pdfPaths[i], `PDF ${i + 1} - First Page`);
+                    }
+                    loading.style.display = 'none';
+                } catch (error) {
+                    loading.textContent = 'Error loading PDF: ' + error.message;
+                    console.error('PDF Error:', error);
+                }
+            }
+            async function renderPDFFirstPage(pdfPath, title) {
+                try {
+                    const pdfDoc = await pdfjsLib.getDocument(pdfPath).promise;
+                    const page = await pdfDoc.getPage(1); // Get only first page
+                    const scale = 1.5;
+                    const viewport = page.getViewport({ scale: scale });
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    const container = document.createElement('div');
+                    container.className = 'pdf-container';
+                    const heading = document.createElement('h3');
+                    heading.textContent = title;
+                    container.appendChild(heading);
+                    const pageContainer = document.createElement('div');
+                    pageContainer.className = 'page-container';
+                    pageContainer.appendChild(canvas);
+                    container.appendChild(pageContainer);
+                    pdfPreview.appendChild(container);
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    await page.render(renderContext).promise;
+                } catch (error) {
+                    throw new Error(`Failed to load ${pdfPath}: ${error.message}`);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
+
 
 </body>
 
