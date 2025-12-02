@@ -1551,17 +1551,14 @@
 
                         <div class="col-md-12">
                             <label class="form-label">Email</label>
-                            <input type="email" class="form-control popup-input" id="userEmail" required
+                            <input type="email" class="form-control popup-input text-lowercase" id="userEmail" required
                                 placeholder="Enter your email">
                         </div>
 
                         <div class="col-md-12">
                             <button type="submit" class="btn popup-submit w-100">Submit & Download</button>
                         </div>
-
                     </form>
-
-
                 </div>
 
             </div>
@@ -1602,6 +1599,170 @@
             });
         });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        // (function() {
+        //     emailjs.init("c8M_qh3t1MOScLms-");   // EmailJS → Integration → Public Key
+        // })();
+        // $("#downloadForm").on("submit", function(e) {
+        //     e.preventDefault();
+        //     const userName = $("#userName").val();
+        //     const userEmail = $("#userEmail").val();
+        //     // PDF URL
+        //     // const pdfLink = "https://yourwebsite.com/static/myfile.pdf";
+        //     //  const pdfLink ="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2021/oct/doc2021103031.pdf";
+        //     const templateParams = {
+        //         to_name: userName,
+        //         to_email: userEmail,
+        //         // pdf_url: pdfLink
+        //     };
+        //     emailjs.send("service_iogh7f7", "template_byry306", templateParams)
+        //     .then(function(response) {
+        //         console.log(templateParams);
+        //         alert("PDF successfully sent to your email!");
+        //         // Automatic PDF download
+        //         // window.location.href = pdfLink;
+        //     }, function(error) {
+        //         alert("Email sending failed!");
+        //         console.log(error);
+        //     });
+        // });
+
+        
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+    (function() {
+        emailjs.init("c8M_qh3t1MOScLms-");   // Your public key
+    })();
+
+    $("#downloadForm").on("submit", function(e) {
+        e.preventDefault();
+
+        const userName = $("#userName").val();
+        const userEmail = $("#userEmail").val();
+
+        const templateParams = {
+            to_name: userName,
+            to_email: userEmail
+        };
+
+        emailjs.send("service_iogh7f7", "template_byry306", templateParams)
+        .then(function(response) {
+            alert("Email successfully sent to: " + userEmail);
+            console.log("Sent:", templateParams);
+        }, function(error) {
+            alert("Email sending failed!");
+            console.log(error);
+        });
+    });
+</script>
+
+
+   <!-- <script>
+    (function() {
+        emailjs.init("c8M_qh3t1MOScLms-");  // Your public key
+    })();
+    $("#downloadForm").on("submit", async function(e) {
+        e.preventDefault();
+        const userName = $("#userName").val();
+        const userEmail = $("#userEmail").val();
+        alert(userName +","+ userEmail);
+        // Your PDF URL
+        const pdfURL = "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2021/oct/doc2021103031.pdf";
+        // Convert PDF to Base64
+        async function pdfToBase64(url) {
+            const response = await fetch(url);
+            const blob = await response.blob();
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onloadend = () => resolve(reader.result);
+                reader.readAsDataURL(blob);
+            });
+        }
+        // Convert URL → Base64
+        const base64PDF = await pdfToBase64(pdfURL);
+        console.log(base64PDF);
+        // EmailJS parameters
+        const templateParams = {
+            to_name: userName,
+            to_email: userEmail,
+            my_attachment: base64PDF // matches EmailJS template
+        };
+        // Send email
+        emailjs.send("service_iogh7f7", "template_byry306", templateParams)
+            .then(function () {
+                alert("PDF successfully sent to your email!");
+                // Auto download PDF
+                window.location.href = pdfURL;
+            })
+            .catch(function (error) {
+                alert("Email sending failed!");
+                console.log("EmailJS Error: ", error);
+            });
+    });
+</script> -->
+
+    <!-- <script>
+        $("#downloadForm").on("submit", function(e) {
+            e.preventDefault();
+            const userName = $("#userName").val();
+            const userEmail = $("#userEmail").val();
+            const pdfURL = "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2021/oct/doc2021103031.pdf";
+            emailjs.send("service_iogh7f7", "template_byry306", {
+                to_name: userName,
+                to_email: userEmail,
+                pdf_url: pdfURL
+            })
+            .then(() => {
+                alert("PDF link sent to your email!");
+                window.location.href = pdfURL; // auto download
+            })
+            .catch(error => {
+                alert("Email failed!");
+                console.log(error);
+            });
+        });
+    </script> -->
+
+    <!-- <script>
+    (function() {
+        emailjs.init("c8M_qh3t1MOScLms-");
+    })();
+    $("#downloadForm").on("submit", async function(e) {
+        e.preventDefault();
+        const userName = $("#userName").val();
+        const userEmail = $("#userEmail").val();
+        const pdfLink = "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2021/oct/doc2021103031.pdf";
+        // Convert PDF URL to Base64
+        async function getBase64FromUrl(url) {
+            const data = await fetch(url);
+            const blob = await data.blob();
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(blob);
+                reader.onloadend = () => resolve(reader.result);
+            });
+        }
+        const base64PDF = await getBase64FromUrl(pdfLink);
+        const templateParams = {
+            to_name: userName,
+            to_email: userEmail,
+            my_attachment: base64PDF
+        };
+        emailjs.send("service_iogh7f7", "template_byry306", templateParams)
+            .then(function(response) {
+                alert("PDF successfully sent to your email!");
+                window.location.href = pdfLink;
+            }, function(error) {
+                alert("Email sending failed!");
+                console.log(error);
+            });
+    });
+    </script> -->
+
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
     <script>
         function previewpdf(url1) {
@@ -1675,7 +1836,7 @@
             }
         }
     </script>
-    <script>
+    <!-- <script>
         document.getElementById('downloadForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -1698,7 +1859,7 @@
             link.click();
             link.remove();
         });
-    </script>
+    </script> -->
     <script>
         function setPDF(el) {
             const pdf = el.getAttribute('data-pdf');
@@ -1714,9 +1875,19 @@ document.getElementById('downloadModal').addEventListener('show.bs.modal', funct
 });
 </script>
 
-</body>
-
-</html>
+   <script src="assets/js/jquery.js"></script>
+   <script src="assets/js/waypoints.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/slick.min.js"></script>
+   <script src="assets/js/magnific-popup.js"></script>
+   <script src="assets/js/purecounter.js"></script>
+   <script src="assets/js/wow.js"></script>
+   <script src="assets/js/nice-select.js"></script>
+   <script src="assets/js/swiper-bundle.js"></script>
+   <script src="assets/js/isotope-pkgd.js"></script>
+   <script src="assets/js/imagesloaded-pkgd.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/main.js"></script>
 
 
 </body>
