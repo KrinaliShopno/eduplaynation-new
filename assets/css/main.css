@@ -1944,14 +1944,15 @@ input[type=color] {
   border-radius: 5px;
 }
 .it-custom-accordion .accordion-buttons {
-  font-size: 20px;
-  font-weight: 600;
-  padding: 21px 25px;
-  font-family: var(--it-ff-heading);
-  color: var(--it-common-white);
-  position: relative;
-  width: 100%;
-  text-align: left;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 21px 25px;
+    font-family: var(--it-ff-heading);
+    color: #000000;
+    position: relative;
+    width: 100%;
+    text-align: left;
+    background: #48733930;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .it-custom-accordion .accordion-buttons {
@@ -1980,11 +1981,11 @@ input[type=color] {
   font-family: "Font Awesome 5 Pro";
   top: 50%;
   right: 30px;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 16px;
   opacity: 1;
   transform: translateY(-50%);
-  color: var(--it-common-white);
+  color: var(--it-common-black);
 }
 .it-custom-accordion .accordion-buttons.collapsed::after {
   content: "\f067";
@@ -1994,11 +1995,12 @@ input[type=color] {
   color: var(--it-common-white);
 }
 .it-custom-accordion .accordion-buttons:not(.collapsed)::after {
-  color: var(--it-common-white);
+  color: var(--it-common-black);
 }
 .it-custom-accordion .collapsed {
   position: relative;
   z-index: 99;
+  /* background-color: var(--it-theme-2); */
 }
 .it-custom-accordion .accordion-body {
   padding: 30px 28px;
@@ -2048,12 +2050,12 @@ input[type=color] {
 }
 
 .it-custom-accordion-style-3 .accordion-buttons:not(.collapsed) {
-  background-color: var(--it-theme-1);
-  color: var(--it-common-white);
+  background-color: #48733930;
+  color: var(--it-common-black);
 }
 .it-custom-accordion-style-3 .accordion-body p {
   margin-right: 40px;
-  color: var(--it-common-white);
+  color: var(--it-common-black);
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .it-custom-accordion-style-3 .accordion-body p {
@@ -10342,6 +10344,13 @@ td.product-thumbnail img {
   animation: itswing 0.9s forwards infinite alternate;
   transform-origin: bottom right;
 }
+.it-jam-3-shape-22 {
+    position: absolute;
+  top: 2%;
+  right: 4%;
+  animation: itswing 0.9s forwards infinite alternate;
+  transform-origin: bottom right;
+}
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .it-about-3-shape-2 {
     top: -12%;
@@ -12754,7 +12763,7 @@ ease;
 }
 
 .it-faq-wrap{
-  width: 75%;
+  width: 100%;
   margin: auto;
 }
 /* Shapes */
