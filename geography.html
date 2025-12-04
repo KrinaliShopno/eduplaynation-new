@@ -1604,13 +1604,13 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
 (function () {
-    emailjs.init("c8M_qh3t1MOScLms-");  // EmailJS Public Key
+    emailjs.init("c8M_qh3t1MOScLms-");
 })();
 
 $("#downloadForm").on("submit", function (e) {
     e.preventDefault();
 
-    const form = this; // store reference for reset()
+    const form = this;
 
     const userName = $("#userName").val();
     const userEmail = $("#userEmail").val();
@@ -1624,18 +1624,27 @@ $("#downloadForm").on("submit", function (e) {
     };
 
     emailjs.send("service_iogh7f7", "template_byry306", templateParams)
-        .then(function (response) {
+        .then(function () {
 
             alert("🎉 PDF successfully sent to your email!");
 
             // Close modal
             var myModalEl = document.getElementById('downloadModal');
-            var modal = bootstrap.Modal.getInstance(myModalEl);
-            if (modal) modal.hide();
+            var modal = bootstrap.Modal.getOrCreateInstance(myModalEl);
+            modal.hide();
+
+            // REMOVE BACKDROP + RESET MODAL (required for next click)
+            $('.modal-backdrop').remove();
+            $('body').removeClass('modal-open');
+            $('body').css('padding-right', '');
+            $('#downloadModal').removeClass('show').hide();
 
             // Reset form
             form.reset();
 
+            // // Open PDF immediately
+            // window.open(pdfLink, "_blank");
+          
         })
         .catch(function (error) {
             alert("❌ Email sending failed!");
@@ -1643,6 +1652,9 @@ $("#downloadForm").on("submit", function (e) {
         });
 });
 </script>
+
+
+
 
     <!-- <script>
         document.getElementById("downloadForm").addEventListener("submit", function (e) {
