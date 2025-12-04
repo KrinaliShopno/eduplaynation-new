@@ -687,13 +687,10 @@
                                     <button class="jam-btn preview"
                                         onclick="previewpdf('assets/img/pdf/T3.JAM 2A-G context.pdf')">
                                         Preview</button>
-                                    <a href="subscribe.html" class="jam-btn download"
-
-                                        
-                                         >
-                                         <!-- data-pdf="assets/img/pdf/T3.JAM 2A-G context.pdf" data-bs-toggle="modal"
+                                    <a href="subscribe.html" class="jam-btn download">
+                                        <!-- data-pdf="assets/img/pdf/T3.JAM 2A-G context.pdf" data-bs-toggle="modal"
                                         data-bs-target="#downloadModal" -->
-                                          <!-- onclick="setPDF(this)" -->
+                                        <!-- onclick="setPDF(this)" -->
                                         <i class="bi bi-download"></i> Download
                                     </a>
                                 </div>
@@ -1444,7 +1441,7 @@
                                         <li><a href="blog.html">Faq</a></li>
                                         <li><a href="contact.html">Contact Us</a></li>
                                         <li><a href="termsOfservice.html">Terms Of Service</a></li>
-                              <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                                        <li><a href="privacypolicy.html">Privacy Policy</a></li>
 
                                     </ul>
                                 </div>
@@ -1606,32 +1603,63 @@
 
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-        (function() {
-            emailjs.init("c8M_qh3t1MOScLms-");   // EmailJS → Integration → Public Key
-        })();
-        $("#downloadForm").on("submit", function(e) {
-            e.preventDefault();
-            const userName = $("#userName").val();
-            const userEmail = $("#userEmail").val();
-            // PDF URL
-            // const pdfLink = "https://yourwebsite.com/static/myfile.pdf";
-             const pdfLink ="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2021/oct/doc2021103031.pdf";
-            const templateParams = {
-                to_name: userName,
-                to_email: userEmail,
-                pdf_url: pdfLink
-            };
-            emailjs.send("service_iogh7f7", "template_byry306", templateParams)
-            .then(function(response) {
-                console.log(templateParams);
-                alert("PDF successfully sent to your email!");
-            }, function(error) {
-                alert("Email sending failed!");
-                console.log(error);
-            });
-        });
-    </script>
+(function () {
+    emailjs.init("c8M_qh3t1MOScLms-");  // EmailJS Public Key
+})();
 
+$("#downloadForm").on("submit", function (e) {
+    e.preventDefault();
+
+    const form = this; // store reference for reset()
+
+    const userName = $("#userName").val();
+    const userEmail = $("#userEmail").val();
+
+    const pdfLink = "https://eduplaynation.netlify.app/assets/img/pdf/T3.JAM_1A-G_Game_Theory.pdf";
+
+    const templateParams = {
+        to_name: userName,
+        to_email: userEmail,
+        pdf_url: pdfLink
+    };
+
+    emailjs.send("service_iogh7f7", "template_byry306", templateParams)
+        .then(function (response) {
+
+            alert("🎉 PDF successfully sent to your email!");
+
+            // Close modal
+            var myModalEl = document.getElementById('downloadModal');
+            var modal = bootstrap.Modal.getInstance(myModalEl);
+            if (modal) modal.hide();
+
+            // Reset form
+            form.reset();
+
+        })
+        .catch(function (error) {
+            alert("❌ Email sending failed!");
+            console.log(error);
+        });
+});
+</script>
+
+    <!-- <script>
+        document.getElementById("downloadForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // stop real form submit
+
+            // Show success message
+            alert("🎉 Your request has been submitted successfully!");
+
+            // Close the modal (Bootstrap 5)
+            var myModalEl = document.getElementById('downloadModal');
+            var modal = bootstrap.Modal.getInstance(myModalEl);
+            modal.hide();
+
+            // Reset the form
+            this.reset();
+        });
+    </script> -->
 
 
 
@@ -1739,26 +1767,26 @@
             document.getElementById('pdfUrl').value = pdf;
         }
     </script>
-<script>
-document.getElementById('downloadModal').addEventListener('show.bs.modal', function () {
-    document.getElementById('userName').value = "";
-    document.getElementById('userEmail').value = "";
-});
-</script>
+    <script>
+        document.getElementById('downloadModal').addEventListener('show.bs.modal', function () {
+            document.getElementById('userName').value = "";
+            document.getElementById('userEmail').value = "";
+        });
+    </script>
 
-   <script src="assets/js/jquery.js"></script>
-   <script src="assets/js/waypoints.js"></script>
-   <script src="assets/js/bootstrap.bundle.min.js"></script>
-   <script src="assets/js/slick.min.js"></script>
-   <script src="assets/js/magnific-popup.js"></script>
-   <script src="assets/js/purecounter.js"></script>
-   <script src="assets/js/wow.js"></script>
-   <script src="assets/js/nice-select.js"></script>
-   <script src="assets/js/swiper-bundle.js"></script>
-   <script src="assets/js/isotope-pkgd.js"></script>
-   <script src="assets/js/imagesloaded-pkgd.js"></script>
-   <script src="assets/js/ajax-form.js"></script>
-   <script src="assets/js/main.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/waypoints.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/magnific-popup.js"></script>
+    <script src="assets/js/purecounter.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/nice-select.js"></script>
+    <script src="assets/js/swiper-bundle.js"></script>
+    <script src="assets/js/isotope-pkgd.js"></script>
+    <script src="assets/js/imagesloaded-pkgd.js"></script>
+    <script src="assets/js/ajax-form.js"></script>
+    <script src="assets/js/main.js"></script>
 
 
 </body>
