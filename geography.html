@@ -687,9 +687,13 @@
                                     <button class="jam-btn preview"
                                         onclick="previewpdf('assets/img/pdf/T3.JAM 2A-G context.pdf')">
                                         Preview</button>
-                                    <a href="#" class="jam-btn download"
-                                        data-pdf="assets/img/pdf/T3.JAM 2A-G context.pdf" data-bs-toggle="modal"
-                                        data-bs-target="#downloadModal" onclick="setPDF(this)">
+                                    <a href="subscribe.html" class="jam-btn download"
+
+                                        
+                                         >
+                                         <!-- data-pdf="assets/img/pdf/T3.JAM 2A-G context.pdf" data-bs-toggle="modal"
+                                        data-bs-target="#downloadModal" -->
+                                          <!-- onclick="setPDF(this)" -->
                                         <i class="bi bi-download"></i> Download
                                     </a>
                                 </div>
@@ -1439,8 +1443,8 @@
                                         <li><a href="about-us.html">Help Center</a></li>
                                         <li><a href="blog.html">Faq</a></li>
                                         <li><a href="contact.html">Contact Us</a></li>
-                                        <li><a href="#">Terms Of Service</a></li>
-                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="termsOfservice.html">Terms Of Service</a></li>
+                              <li><a href="privacypolicy.html">Privacy Policy</a></li>
 
                                     </ul>
                                 </div>
@@ -1601,169 +1605,36 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script>
-        // (function() {
-        //     emailjs.init("c8M_qh3t1MOScLms-");   // EmailJS → Integration → Public Key
-        // })();
-        // $("#downloadForm").on("submit", function(e) {
-        //     e.preventDefault();
-        //     const userName = $("#userName").val();
-        //     const userEmail = $("#userEmail").val();
-        //     // PDF URL
-        //     // const pdfLink = "https://yourwebsite.com/static/myfile.pdf";
-        //     //  const pdfLink ="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2021/oct/doc2021103031.pdf";
-        //     const templateParams = {
-        //         to_name: userName,
-        //         to_email: userEmail,
-        //         // pdf_url: pdfLink
-        //     };
-        //     emailjs.send("service_iogh7f7", "template_byry306", templateParams)
-        //     .then(function(response) {
-        //         console.log(templateParams);
-        //         alert("PDF successfully sent to your email!");
-        //         // Automatic PDF download
-        //         // window.location.href = pdfLink;
-        //     }, function(error) {
-        //         alert("Email sending failed!");
-        //         console.log(error);
-        //     });
-        // });
-
-        
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-    (function() {
-        emailjs.init("c8M_qh3t1MOScLms-");   // Your public key
-    })();
-
-    $("#downloadForm").on("submit", function(e) {
-        e.preventDefault();
-
-        const userName = $("#userName").val();
-        const userEmail = $("#userEmail").val();
-
-        const templateParams = {
-            to_name: userName,
-            to_email: userEmail
-        };
-
-        emailjs.send("service_iogh7f7", "template_byry306", templateParams)
-        .then(function(response) {
-            alert("Email successfully sent to: " + userEmail);
-            console.log("Sent:", templateParams);
-        }, function(error) {
-            alert("Email sending failed!");
-            console.log(error);
-        });
-    });
-</script>
-
-
-   <!-- <script>
-    (function() {
-        emailjs.init("c8M_qh3t1MOScLms-");  // Your public key
-    })();
-    $("#downloadForm").on("submit", async function(e) {
-        e.preventDefault();
-        const userName = $("#userName").val();
-        const userEmail = $("#userEmail").val();
-        alert(userName +","+ userEmail);
-        // Your PDF URL
-        const pdfURL = "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2021/oct/doc2021103031.pdf";
-        // Convert PDF to Base64
-        async function pdfToBase64(url) {
-            const response = await fetch(url);
-            const blob = await response.blob();
-            return new Promise((resolve) => {
-                const reader = new FileReader();
-                reader.onloadend = () => resolve(reader.result);
-                reader.readAsDataURL(blob);
-            });
-        }
-        // Convert URL → Base64
-        const base64PDF = await pdfToBase64(pdfURL);
-        console.log(base64PDF);
-        // EmailJS parameters
-        const templateParams = {
-            to_name: userName,
-            to_email: userEmail,
-            my_attachment: base64PDF // matches EmailJS template
-        };
-        // Send email
-        emailjs.send("service_iogh7f7", "template_byry306", templateParams)
-            .then(function () {
-                alert("PDF successfully sent to your email!");
-                // Auto download PDF
-                window.location.href = pdfURL;
-            })
-            .catch(function (error) {
-                alert("Email sending failed!");
-                console.log("EmailJS Error: ", error);
-            });
-    });
-</script> -->
-
-    <!-- <script>
+        (function() {
+            emailjs.init("c8M_qh3t1MOScLms-");   // EmailJS → Integration → Public Key
+        })();
         $("#downloadForm").on("submit", function(e) {
             e.preventDefault();
             const userName = $("#userName").val();
             const userEmail = $("#userEmail").val();
-            const pdfURL = "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2021/oct/doc2021103031.pdf";
-            emailjs.send("service_iogh7f7", "template_byry306", {
+            // PDF URL
+            // const pdfLink = "https://yourwebsite.com/static/myfile.pdf";
+             const pdfLink ="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2021/oct/doc2021103031.pdf";
+            const templateParams = {
                 to_name: userName,
                 to_email: userEmail,
-                pdf_url: pdfURL
-            })
-            .then(() => {
-                alert("PDF link sent to your email!");
-                window.location.href = pdfURL; // auto download
-            })
-            .catch(error => {
-                alert("Email failed!");
-                console.log(error);
-            });
-        });
-    </script> -->
-
-    <!-- <script>
-    (function() {
-        emailjs.init("c8M_qh3t1MOScLms-");
-    })();
-    $("#downloadForm").on("submit", async function(e) {
-        e.preventDefault();
-        const userName = $("#userName").val();
-        const userEmail = $("#userEmail").val();
-        const pdfLink = "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2021/oct/doc2021103031.pdf";
-        // Convert PDF URL to Base64
-        async function getBase64FromUrl(url) {
-            const data = await fetch(url);
-            const blob = await data.blob();
-            return new Promise((resolve) => {
-                const reader = new FileReader();
-                reader.readAsDataURL(blob);
-                reader.onloadend = () => resolve(reader.result);
-            });
-        }
-        const base64PDF = await getBase64FromUrl(pdfLink);
-        const templateParams = {
-            to_name: userName,
-            to_email: userEmail,
-            my_attachment: base64PDF
-        };
-        emailjs.send("service_iogh7f7", "template_byry306", templateParams)
+                pdf_url: pdfLink
+            };
+            emailjs.send("service_iogh7f7", "template_byry306", templateParams)
             .then(function(response) {
+                console.log(templateParams);
                 alert("PDF successfully sent to your email!");
-                window.location.href = pdfLink;
             }, function(error) {
                 alert("Email sending failed!");
                 console.log(error);
             });
-    });
-    </script> -->
+        });
+    </script>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+
+
+
     <script>
         function previewpdf(url1) {
 

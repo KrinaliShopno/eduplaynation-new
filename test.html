@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 450px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            outline: none;
+            border-color: #667EEA;
+        }
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .message {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            display: none;
+        }
+        .message.success {
+            background: #D4EDDA;
+            color: #155724;
+            border: 1px solid #C3E6CB;
+        }
+        .message.error {
+            background: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+        }
+        .pdf-icon {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pdf-icon">:page_facing_up:</div>
+        <h1>Download Your PDF</h1>
+        <p class="subtitle">Enter your details to download and receive the PDF via email</p>
+        <form id="downloadForm">
+            <div class="form-group">
+                <label for="userName">Full Name</label>
+                <input type="text" id="userName" name="userName" required placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="userEmail">Email Address</label>
+                <input type="email" id="userEmail" name="userEmail" required placeholder="Enter your email">
+            </div>
+            <button type="submit" class="btn" id="downloadBtn">Download PDF</button>
+        </form>
+        <div class="message" id="message"></div>
+    </div>
+    <script>
+       
+        // Initialize EmailJS with your public key
+        // You need to sign up at https://www.emailjs.com/ and get your keys
+        emailjs.init("c8M_qh3t1MOScLms-"); // Replace with your EmailJS public key
+        const form = document.getElementById('downloadForm');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const message = document.getElementById('message');
+        // Replace this with the actual path to your PDF file
+        const pdfUrl = 'assets/img/pdf/T3. JAM 10 A-G creativity.pdf'; // Put your PDF file name here
+        form.addEventListener('submit', async function(e) {
+        
+            // e.preventDefault();
+            const userName = document.getElementById('userName').value;
+            const userEmail = document.getElementById('userEmail').value;
+            // Disable button and show loading state
+            downloadBtn.disabled = true;
+            downloadBtn.textContent = 'Processing...';
+            message.style.display = 'none';
+            try {
+                alert(userName + "," + userEmail);
+                // Send email using EmailJS
+                const templateParams = {
+                    user_name: userName,
+                    user_email: userEmail,
+                    // pdf_link: window.location.origin + '/' + pdfUrl
+                };
+                alert("templateParams",templateParams)
+                await emailjs.send(
+                    'service_iogh7f7',  // Replace with your EmailJS service ID
+                    'template_byry306', // Replace with your EmailJS template ID
+                    templateParams
+                );
+                // Start PDF download
+                const link = document.createElement('a');
+                link.href = pdfUrl;
+                link.download = 'document.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                // Show success message
+                showMessage('Success! PDF is downloading and has been sent to your email.', 'success');
+                // Reset form
+                form.reset();
+            } catch (error) {
+                console.error('Error:', error);
+                showMessage('An error occurred. PDF is downloading, but email could not be sent.', 'error');
+                // Still allow download even if email fails
+                const link = document.createElement('a');
+                link.href = pdfUrl;
+                link.download = 'document.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } finally {
+                // Re-enable button
+                downloadBtn.disabled = false;
+                downloadBtn.textContent = 'Download PDF';
+            }
+        });
+        // }
+        function showMessage(text, type) {
+            message.textContent = text;
+            message.className = 'message ' + type;
+            message.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
