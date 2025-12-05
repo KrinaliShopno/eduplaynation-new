@@ -243,9 +243,10 @@
             <div class="it-header-wrap p-relative">
                <div class="row align-items-center">
                   <div class=" col-6 col-sm-6 col-md-6 col-lg-6 col-xl-1 ">
-                     <div class="it-header-logo">
-                        <!-- <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a> -->
-                        eduPLAYnation
+                                        <div class="it-header-logo">
+                        <a href="index.html">
+                           eduPLAYnation
+                        </a>
                      </div>
                   </div>
                   <div class=" col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 d-none d-xl-block">
@@ -511,8 +512,8 @@
          <div class="it-hero-3-shape-1">
             <img src="assets/img/hero/shape-4-1.png" alt="">
          </div>
-         <div class="it-hero-3-shape-2 d-none d-lg-block">
-            <img src="assets/img/hero/shape-4-2.png" alt="">
+         <div class="it-hero-3-shape-22 d-none d-lg-block">
+            <img src="assets/img/about/24060537_l4hm_00ew_211001-removebg-preview.png" alt="" class="spaceship-image">
          </div>
          <div class="it-hero-3-shape-3 d-none d-lg-block">
             <img src="assets/img/hero/shape-4-3.png" alt="">
@@ -609,7 +610,7 @@
 
             <!-- MAIN DESCRIPTION -->
             <p class="eduplay-desc">
-               eduPLAYnation is an online platform that offers K4-5 task conflicts and comes
+               <span class="edu-font">eduPLAYnation</span> is an online platform that offers K4-5 task conflicts and comes
                complete with lessons and extensions. This novel approach uses human connection
                to spark intrigue, plus it aligns with Science of Reading guidelines so all
                learners can explore the role trust plays in conflict & cooperation.
@@ -2732,7 +2733,8 @@
          </div>
          <div class="container">
             <div class="row">
-               <h3 class="it-section-title pb-30 text-center">Faqs <span class="edu-2"></span></h3>
+               <h3 class="it-section-title pb-30 text-center">Frequently Asked Questions
+ <span class="edu-2"></span></h3>
                <!-- <div class="col-xl-4 col-lg-4 order-1 order-lg-0">
                   <div class="it-sv-details-sidebar it-faq-sidebar">
                      <div class="it-sv-details-sidebar-search mb-55">
@@ -3254,6 +3256,23 @@
          }
       });
    </script>
+<script>
+function highlightEduPlaynation() {
+    const elements = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, span, div");
+
+    elements.forEach(el => {
+        if (el.children.length === 0 && el.innerHTML.includes("eduPLAYnation")) {
+            el.innerHTML = el.innerHTML.replace(
+                /eduPLAYnation/g,
+                '<span class="edu-font">eduPLAYnation</span>'
+            );
+        }
+    });
+}
+
+highlightEduPlaynation();
+</script>
+
 
 
 </body>
