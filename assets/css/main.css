@@ -546,6 +546,26 @@ input[type=color] {
 .it-btn-white.circle-effect {
   position: relative;
 }
+.section-padding {
+  padding-top: 130px;
+  padding-bottom: 110px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .section-padding {
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .section-padding {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+}
 .it-btn-white.circle-effect::after {
   background-color: var(--it-common-black);
   bottom: -100%;
@@ -1517,7 +1537,7 @@ input[type=color] {
   bottom: 0;
   box-shadow: 0 16px -32px 0 rgba(0, 0, 0, 0.8);
   background-color: var(--it-common-black);
-  z-index: 9999;
+  z-index: 999999;
   padding: 50px;
   scrollbar-width: none;
   opacity: 0;
@@ -2445,7 +2465,7 @@ input[type=color] {
 .it-section-subtitle {
   /* color: #FFFFFF; */
   font-family: var(--it-ff-schoolbell);
-  font-size: 25px;
+  font-size: 31px;
   font-weight: 400;
   line-height: 30px;
   display: block;
@@ -7547,6 +7567,11 @@ td.product-thumbnail img {
   height: 1px;
   background-color: var(--it-common-white);
 }
+.faq-img{
+  width: 250px;
+  height: 180px;
+  border-radius: 10px;
+}
 
 .it-student-bg {
   /* background-color: #E7F8FE; */
@@ -10342,7 +10367,7 @@ td.product-thumbnail img {
   }
 }
 .it-about-3-title-box {
-  margin-right: -190px;
+  /* margin-right: -190px; */
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .it-about-3-title-box {
@@ -10389,7 +10414,7 @@ td.product-thumbnail img {
 .it-about-3-shape-3 {
   position: absolute;
   bottom: -5%;
-  left: 25%;
+  left: 4%;
   animation: itswing 1.1s forwards infinite alternate;
   transform-origin: top right;
 }
