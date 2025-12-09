@@ -2030,6 +2030,7 @@ input[type=color] {
   font-style: normal;
   font-weight: 400;
   line-height: 32px;
+  justify-content: space-between;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .it-custom-accordion .accordion-body {
@@ -10574,7 +10575,7 @@ td.product-thumbnail img {
 /*  14. faq css start
 /*----------------------------------------*/
 .it-faq-sidebar {
-  margin-right: 30px;
+  /* margin-right: 30px; */
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .it-faq-sidebar {
@@ -11209,7 +11210,11 @@ td.product-thumbnail img {
   border-radius: 50%;
 }
 .it-sv-details-sidebar {
-  padding-left: 45px;
+  /* padding-left: 45px; */
+      justify-content: end;
+    display: flex;
+    align-items: end;
+    margin: 0 auto;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .it-sv-details-sidebar {
@@ -11218,6 +11223,7 @@ td.product-thumbnail img {
 }
 .it-sv-details-sidebar-search {
   position: relative;
+      width: 450px;
 }
 .it-sv-details-sidebar-search input {
   width: 100%;
@@ -13681,4 +13687,141 @@ ease;
     font-family: "MATTEKEK" !important;
     font-weight: 500;
     font-size: 22px;
+}
+
+/* Modern Tab Design */
+        .custom-tabs {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 14px;
+            gap: 15px;
+        }
+
+        .custom-tabs .nav-link {
+            background: #fff;
+            color: #555;
+            border-radius: 10px;
+            font-weight: 600;
+            padding: 12px 22px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.25s ease;
+        }
+
+        .custom-tabs .nav-link .icon {
+            font-size: 18px;
+        }
+
+        /* Active Tab */
+        .custom-tabs .nav-link.active {
+    background: #487339;
+    color: #fff;
+    border-color: #487339;
+    box-shadow: 0 4px 12px rgb(72 115 57 / 44%);
+        }
+
+        /* Hover Effect */
+        .custom-tabs .nav-link:hover {
+    background: #4873393d;
+    color: black;
+        }
+
+        /* Tab Content Animation */
+        .tab-pane {
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+.tab-scroll-container {
+    position: relative;
+    width: 100%;
+    padding: 25px;
+}
+
+/* Keep tabs in one horizontal row */
+.tab-scroll-wrapper {
+    overflow-x: auto;
+    white-space: nowrap !important;
+    scroll-behavior: smooth;
+    /* padding: 8px 40px; */
+}
+.tab-scroll-wrapper.dragging {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.tab-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-scroll-list {
+    display: inline-flex !important;
+    flex-wrap: nowrap !important;
+    gap: 12px;
+    white-space: nowrap !important;
+}
+
+.tab-scroll-list .nav-link {
+    white-space: nowrap !important;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-weight: 600;
+        color: black;
+}
+
+.tab-scroll-list .nav-link.active {
+    background: #487339;
+    color: #fff;
+    border-color: #487339;
+    box-shadow: 0 4px 12px rgb(72 115 57 / 44%);
+}
+        .tab-scroll-list .nav-link:hover {
+    background: #4873393d;
+    color: black;
+        }
+/* Arrows */
+.tab-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #fff;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.tab-arrow.left {
+    left: 0;
+}
+
+.tab-arrow.right {
+    right: 0;
+}
+
+.tab-arrow i {
+    font-size: 15px;
+    color: #333;
 }
