@@ -582,61 +582,55 @@
                      </div>
                   </div>
                </div>
-
                <div class="container py-3 col-xl-12 col-lg-4">
-
-
                   <!-- Tabs -->
-<div class="tab-scroll-container">
+                  <div class="tab-scroll-container">
+                     <!-- Left Arrow -->
+                     <button class="tab-arrow left" id="leftArrow">
+                        <i class="fas fa-chevron-left"></i>
+                     </button>
+                     <!-- Scrollable Row -->
+                     <div class="tab-scroll-wrapper" id="tabScroll">
+                        <ul class="nav nav-pills tab-scroll-list" role="tablist">
+                           <li class="nav-item">
+                              <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab-all">
+                                 Understanding JAMs
+                              </button>
+                           </li>
 
-    <!-- Left Arrow -->
-    <button class="tab-arrow left" id="leftArrow">
-        <i class="fas fa-chevron-left"></i>
-    </button>
+                           <li class="nav-item">
+                              <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-sales">
+                                 Student Abilities, Classroom Rigor & Group Management
+                              </button>
+                           </li>
 
-    <!-- Scrollable Row -->
-    <div class="tab-scroll-wrapper" id="tabScroll">
-        <ul class="nav nav-pills tab-scroll-list" role="tablist">
+                           <li class="nav-item">
+                              <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-marketing">
+                                 Content, Curriculum & Instructional Support
+                              </button>
+                           </li>
 
-            <li class="nav-item">
-                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab-all">
-                    Understanding JAMs
-                </button>
-            </li>
+                           <li class="nav-item">
+                              <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-success">
+                                 Using eduPLAYnation
+                              </button>
+                           </li>
 
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-sales">
-                    Student Abilities, Classroom Rigor & Group Management
-                </button>
-            </li>
+                           <li class="nav-item">
+                              <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-subscription">
+                                 Subscription, Downloads & Pricing
+                              </button>
+                           </li>
 
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-marketing">
-                    Content, Curriculum & Instructional Support
-                </button>
-            </li>
+                        </ul>
+                     </div>
 
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-success">
-                    Using eduPLAYnation
-                </button>
-            </li>
+                     <!-- Right Arrow -->
+                     <button class="tab-arrow right" id="rightArrow">
+                        <i class="fas fa-chevron-right"></i>
+                     </button>
 
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-subscription">
-                    Subscription, Downloads & Pricing
-                </button>
-            </li>
-
-        </ul>
-    </div>
-
-    <!-- Right Arrow -->
-    <button class="tab-arrow right" id="rightArrow">
-        <i class="fas fa-chevron-right"></i>
-    </button>
-
-</div>
+                  </div>
 
 
 
@@ -1410,79 +1404,79 @@
    <script src="assets/js/ajax-form.js"></script>
    <script src="assets/js/main.js"></script>
    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
-<script>
-const scrollBox = document.getElementById("tabScroll");
-const leftArrow = document.getElementById("leftArrow");
-const rightArrow = document.getElementById("rightArrow");
+   <script>
+      const scrollBox = document.getElementById("tabScroll");
+      const leftArrow = document.getElementById("leftArrow");
+      const rightArrow = document.getElementById("rightArrow");
 
-leftArrow.addEventListener("click", () => {
-    scrollBox.scrollLeft -= 200;
-});
+      leftArrow.addEventListener("click", () => {
+         scrollBox.scrollLeft -= 200;
+      });
 
-rightArrow.addEventListener("click", () => {
-    scrollBox.scrollLeft += 200;
-});
-</script>
+      rightArrow.addEventListener("click", () => {
+         scrollBox.scrollLeft += 200;
+      });
+   </script>
 
-<script>
-const scrollArea = document.getElementById("tabScroll");
+   <script>
+      const scrollArea = document.getElementById("tabScroll");
 
-let isDown = false;
-let startX;
-let scrollLeft;
+      let isDown = false;
+      let startX;
+      let scrollLeft;
 
-// Mouse Press
-scrollArea.addEventListener("mousedown", (e) => {
-    isDown = true;
-    scrollArea.classList.add("dragging");
-    startX = e.pageX - scrollArea.offsetLeft;
-    scrollLeft = scrollArea.scrollLeft;
-});
+      // Mouse Press
+      scrollArea.addEventListener("mousedown", (e) => {
+         isDown = true;
+         scrollArea.classList.add("dragging");
+         startX = e.pageX - scrollArea.offsetLeft;
+         scrollLeft = scrollArea.scrollLeft;
+      });
 
-// Mouse Leave
-scrollArea.addEventListener("mouseleave", () => {
-    isDown = false;
-    scrollArea.classList.remove("dragging");
-});
+      // Mouse Leave
+      scrollArea.addEventListener("mouseleave", () => {
+         isDown = false;
+         scrollArea.classList.remove("dragging");
+      });
 
-// Mouse Up
-scrollArea.addEventListener("mouseup", () => {
-    isDown = false;
-    scrollArea.classList.remove("dragging");
-});
+      // Mouse Up
+      scrollArea.addEventListener("mouseup", () => {
+         isDown = false;
+         scrollArea.classList.remove("dragging");
+      });
 
-// Mouse Move (scroll)
-scrollArea.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - scrollArea.offsetLeft;
-    const walk = (x - startX) * 2; 
-    scrollArea.scrollLeft = scrollLeft - walk;
-});
+      // Mouse Move (scroll)
+      scrollArea.addEventListener("mousemove", (e) => {
+         if (!isDown) return;
+         e.preventDefault();
+         const x = e.pageX - scrollArea.offsetLeft;
+         const walk = (x - startX) * 2;
+         scrollArea.scrollLeft = scrollLeft - walk;
+      });
 
 
-// ---- MOBILE TOUCH SUPPORT ----
+      // ---- MOBILE TOUCH SUPPORT ----
 
-// Touch Down
-scrollArea.addEventListener("touchstart", (e) => {
-    isDown = true;
-    startX = e.touches[0].pageX - scrollArea.offsetLeft;
-    scrollLeft = scrollArea.scrollLeft;
-});
+      // Touch Down
+      scrollArea.addEventListener("touchstart", (e) => {
+         isDown = true;
+         startX = e.touches[0].pageX - scrollArea.offsetLeft;
+         scrollLeft = scrollArea.scrollLeft;
+      });
 
-// Touch End
-scrollArea.addEventListener("touchend", () => {
-    isDown = false;
-});
+      // Touch End
+      scrollArea.addEventListener("touchend", () => {
+         isDown = false;
+      });
 
-// Touch Move
-scrollArea.addEventListener("touchmove", (e) => {
-    if (!isDown) return;
-    const x = e.touches[0].pageX - scrollArea.offsetLeft;
-    const walk = (x - startX) * 2;
-    scrollArea.scrollLeft = scrollLeft - walk;
-});
-</script>
+      // Touch Move
+      scrollArea.addEventListener("touchmove", (e) => {
+         if (!isDown) return;
+         const x = e.touches[0].pageX - scrollArea.offsetLeft;
+         const walk = (x - startX) * 2;
+         scrollArea.scrollLeft = scrollLeft - walk;
+      });
+   </script>
 
 
 
