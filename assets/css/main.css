@@ -2495,7 +2495,7 @@ input[type=color] {
 .it-section-title {
   font-size: 45px;
   font-weight: 600;
-  /* text-transform: capitalize; */
+  text-transform: capitalize;
   margin-bottom: 0;
 }
 .it-section-title span {
@@ -12677,6 +12677,7 @@ ease;
     font-size: 42px;
     font-weight: 700;
     color: #ffffff;
+    text-transform: capitalize;
     /* margin-bottom: 45px; */
 }
 
