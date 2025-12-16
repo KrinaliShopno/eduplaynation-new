@@ -4919,16 +4919,21 @@ input[type=color] {
 }
 
 
-.cat-empires:hover { background-color: #14748124 !important; }
-.cat-context:hover{background-color: #e3646d2e !important;}
-.cat-creativity:hover { background-color: #52a0ab4d !important; }
-.cat-economics:hover { background-color: #f5983124 !important; }
-.cat-geography:hover { background-color: #787c522e !important; }
-.cat-technology:hover { background-color: #b3025224 !important; }
-.cat-medicine:hover { background-color: #e357df2e !important; }
-.cat-father:hover { background-color: #ef42302e !important; }
-.cat-connection:hover { background-color: #6b5ca729 !important; }
-.cat-trust:hover { background-color: #89bd911a !important; }
+.cat-empires:hover { background-color: 
+#b4433c47
+ !important; }
+.cat-context:hover{background-color: #d28d8654
+ !important;}
+.cat-creativity:hover { background-color: #944e7847 !important; }
+.cat-economics:hover { background-color: 
+#cb7f5952 !important; }
+.cat-geography:hover { background-color: #697e374f !important; }
+.cat-technology:hover { background-color: #c7b14b40 !important; }
+.cat-medicine:hover { background-color: #6fae994a !important; }
+.cat-father:hover { background-color: 
+#78b2bc38 !important; }
+.cat-connection:hover { background-color: #43508947 !important; }
+.cat-trust:hover { background-color: #6a4b8e42 !important; }
 .coming-soon-btn {
     background: #ccc !important;
     color: #666 !important;
@@ -7630,6 +7635,7 @@ td.product-thumbnail img {
   border-radius: 10px;
   background-color: transparent;
   border: 1px solid rgba(137, 137, 137, 0.5);
+  color: #000;
 }
 .it-student-regiform-item input::-webkit-input-placeholder {
   font-size: 15px;
@@ -13955,8 +13961,23 @@ ease;
     pointer-events: none;
     z-index: 0;
 }
-
-
+.it-footer-widget-gallery-bg {
+      /* position: relative; */
+    /* background: #fff; */
+    /* margin-top: 120px; */
+}
+.it-footer-widget-gallery-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/assets/img/about/edulogo1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 140%;
+    opacity: 0.40;
+    pointer-events: none;
+    z-index: 0;
+}
 .rangoli-welcome-1{
   margin-top: 50px;
 }
