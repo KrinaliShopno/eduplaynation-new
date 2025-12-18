@@ -13943,7 +13943,7 @@ ease;
 .rangoli-welcome {
     position: relative;
     background: #fff;
-    margin-top: 120px;
+    /* margin-top: 120px; */
     /* overflow: hidden; */
 }
 
@@ -13977,7 +13977,7 @@ ease;
     z-index: 0;
 }
 .rangoli-welcome-1{
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 /* FLEX ROW */
@@ -13990,11 +13990,13 @@ ease;
 
 /* LEFT IMAGE */
 .welcome-left img {
-    width:350px;
+    width:100%;
     max-width: 100%;
     object-fit: cover;
 }
-
+.welcome-left1 img {
+  border-radius: 10px;
+}
 /* RIGHT CONTENT */
 .welcome-right {
     flex: 1;
@@ -14334,7 +14336,7 @@ ease;
 .unique-offer-row {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
@@ -14369,6 +14371,9 @@ ease;
 
 .shape-pink { background: #ffb1c8; }
 .shape-blue { background: #9fd8ff; }
+.shape-green { background: #48733973; }
+.shape-yellow { background: #eec291; }
+
 
 /* ICON */
 .unique-icon {
@@ -14393,7 +14398,7 @@ ease;
 /* TEXT */
 .unique-card p {
     font-size: 16px;
-    color: #555;
+    color: #000000;
     line-height: 28px;
     margin-bottom: 25px;
     position: relative;
@@ -14476,7 +14481,7 @@ height: 110px;
 
 /* OUR STORY MAIN */
 .story-section {
-    padding: 100px 0;
+    /* padding: 100px 0; */
     background: #ffffff;
     position: relative;
     overflow: hidden;
@@ -14546,7 +14551,7 @@ height: 110px;
     text-align: center;
     font-size: 18px;
     color: #555;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 
 /* TIMELINE */
