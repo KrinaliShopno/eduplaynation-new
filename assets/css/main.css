@@ -7633,7 +7633,7 @@ td.product-thumbnail img {
 }
 .it-student-regiform-item input {
   border-radius: 10px;
-  background-color: transparent;
+  background-color: white;
   border: 1px solid rgba(137, 137, 137, 0.5);
   color: #000;
 }
@@ -7659,7 +7659,7 @@ td.product-thumbnail img {
 .it-student-regiform-item textarea {
   border-radius: 10px;
   height: 200px;
-  background-color: transparent;
+  background-color: white;
   padding: 15px 20px;
   border: 1px solid rgba(137, 137, 137, 0.5);
 }
@@ -7749,7 +7749,7 @@ td.product-thumbnail img {
   padding: 0px 20px;
   position: relative;
   border-radius: 10px;
-  background-color: transparent;
+  background-color: white;
   border: 1px solid rgba(137, 137, 137, 0.5);
 }
 .postbox__select .nice-select:focus {
@@ -11866,7 +11866,23 @@ position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  animation: ittranslateX2 2s infinite alternate;
+  /* animation: ittranslateX2 2s infinite alternate; */
+  width: 100%;
+}
+.it-footer-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.918); /* black opacity */
+    z-index: 1;
+}
+
+.it-footer-bg img {
+    width: 100%;
+    display: block;
 }
 .it-footer-title {
   font-size: 22px;
@@ -13457,20 +13473,21 @@ display: none;
     position: absolute;
     bottom: -15px;
     left: 50%;
+    width: 55%;
     transform: translateX(-50%);
     background: var(--it-theme-2);
-    padding: 1px 13px;
+    padding: 6px 0px;
     border-radius: 50px;
     color: #fff;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 600;
 }
 .jam-type-tag-1 {
     background: var(--it-theme-2);
-    padding: 4px 16px;
+    padding: 4px 22px;
     border-radius: 50px;
     color: #fff;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 600;
     display: inline-block;   /* ⭐ This makes width auto-fit to text */
     width: auto;             /* optional */
@@ -14007,7 +14024,7 @@ ease;
     background-image: url("/assets/img/about/edulogo1.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 140%;
+    background-size: 130%;
     opacity: 0.40;
     pointer-events: none;
     z-index: 0;
