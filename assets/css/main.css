@@ -10256,6 +10256,14 @@ td.product-thumbnail img {
   animation: itswing 1.4s forwards infinite alternate;
   transform-origin: bottom left;
 }
+
+.it-about-2-shape-11{
+   position: absolute;
+  top: 15%;
+  left: -6%;
+  animation: itswing 1.4s forwards infinite alternate;
+  transform-origin: bottom left;
+}
 .it-about-2-ourstory-4{
       position: absolute;
     bottom: 87%;
