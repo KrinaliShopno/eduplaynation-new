@@ -32,6 +32,402 @@
 
 </head>
 
+<style>
+    .hero {
+        /* background: linear-gradient(180deg, #eaf7ee, #ffffff); */
+        border-radius: 18px;
+        padding: 20px 40px;
+        text-align: center;
+        margin: 45px 0px;
+        border: 1px solid #e5e7eb;
+    }
+
+    .hero small {
+        color: #2f9e44;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        margin: 12px 0;
+    }
+
+    .understeding-jams {
+        text-align: start;
+        margin-top: 20px;
+    }
+
+    .understeding-jams h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+        color: #111827;
+    }
+
+    .understeding-jams p {
+        font-size: 16px;
+        line-height: 1.65;
+        color: #374151;
+        margin-bottom: 12px;
+    }
+
+    /* Video Box */
+    .video-box {
+        cursor: pointer;
+        background: #d1fae5;
+        border-radius: 16px;
+        padding: 40px 20px;
+        text-align: center;
+        margin: 30px auto;
+        /* max-width: 800px; */
+        justify-content: center;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .video-box i {
+        font-size: 60px;
+        color: #2f9e44;
+        margin-bottom: 10px;
+    }
+
+    /* MODAL BACKDROP */
+    .video-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+    }
+.video-iframe {
+  display: none;
+}
+    /* MODAL CONTENT */
+    .video-content {
+        background: #000;
+        padding: 10px;
+        border-radius: 12px;
+        max-width: 900px;
+        width: 90%;
+        position: relative;
+    }
+
+    /* CLOSE BUTTON */
+    .close-btn {
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        background: #ffffff;
+        color: #000;
+        font-size: 22px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+
+    /* CARD */
+
+
+    .info-card {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 24px 28px;
+        margin-top: 32px;
+    }
+
+    .info-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 16px;
+    }
+
+    .info-icon {
+        width: 46px;
+        height: 46px;
+        background: #2f9e44;
+        color: #ffffff;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    .info-title h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+        color: #111827;
+    }
+
+    .info-icon i {
+        font-size: 25px;
+    }
+
+    .info-title span {
+        font-size: 16px;
+        color: #2f9e44;
+        font-weight: 500;
+    }
+
+    .info-text {
+        font-size: 16px;
+        line-height: 1.65;
+        color: #374151;
+        margin-bottom: 12px;
+    }
+
+    /* Inner Grey Box */
+    .inner-note {
+        background: #f9fafb;
+        border-radius: 12px;
+        margin: 20px 0;
+        font-size: 18px;
+    }
+
+    .inner-note ul {
+        padding-left: 18px;
+        margin: 10px 0;
+        color: #374151;
+    }
+
+    .inner-note li {
+        margin-bottom: 10px;
+        font-size: 17px;
+    }
+
+    .note-text {
+        font-size: 15px;
+        color: #454950;
+    }
+
+    .inner-note strong {
+        font-size: 16px;
+        color: #000000bf;
+    }
+
+    /* Highlight */
+    .highlight-text {
+        color: #2f9e44;
+        font-style: italic;
+        font-size: 16px;
+        margin: 20px 0;
+    }
+
+    /* Series Section */
+    .series-section {
+        margin-top: 20px;
+    }
+
+    .series-title {
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .series-item {
+        padding-left: 14px;
+        margin-bottom: 14px;
+        border-left: 3px solid #2f9e44;
+    }
+
+    /* Series items – base */
+    .series-item span {
+        font-weight: 600;
+        font-size: 17px;
+        color: #111827;
+        /* title always dark */
+    }
+
+    /* DETAILS TEXT = BLACK */
+    .series-item p {
+        margin-top: 6px;
+        font-size: 16px;
+        color: #000000;
+        /* BLACK details text */
+        line-height: 1.6;
+    }
+
+    /* COMING SOON – DARK GRAY */
+    .series-item.muted {
+        border-left-color: #9ca3af;
+        color: #4b5563;
+        /* dark gray */
+    }
+
+    .series-item.muted span {
+        color: #4b5563;
+        /* dark gray title */
+    }
+
+    .series-item.muted em {
+        font-size: 17px;
+        margin-left: 6px;
+        color: #6b7280;
+        /* slightly lighter gray */
+    }
+
+    .schema-list {
+        margin-top: 20px;
+    }
+
+    /* Each schema item */
+    .schema-item {
+        display: flex;
+        gap: 14px;
+        background: #f9fafb;
+        border-radius: 12px;
+        padding: 14px 16px;
+        margin-bottom: 12px;
+    }
+
+    /* Green number circle */
+    .schema-num {
+        min-width: 30px;
+        height: 30px;
+        background: #2f9e44;
+        color: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    /* Schema text */
+    .schema-item h4 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+        color: #2f9e44;
+    }
+
+    .schema-item p {
+        margin: 4px 0 0;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #000000;
+        /* details black as requested */
+    }
+
+    /* Accordion container */
+    /* Outer accordion box */
+    .resource-accodian .accordion {
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    /* Each row */
+    .resource-accodian .accordion-item {
+        border: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .resource-accodian .accordion-item:last-child {
+        border-bottom: none;
+    }
+
+    /* Accordion button */
+    .resource-accodian .accordion-button {
+        font-size: 16px;
+        font-weight: 600;
+        color: #2f9e44;
+        /* GREEN text */
+        background-color: #ffffff;
+        /* White background */
+        padding: 14px 18px;
+    }
+
+    /* Remove Bootstrap blue background */
+    .resource-accodian .accordion-button:not(.collapsed) {
+        background-color: #ffffff;
+        color: #2f9e44;
+        box-shadow: none;
+    }
+
+    /* Chevron icon (right side) */
+    .resource-accodian .accordion-button::after {
+        background-size: 14px;
+        filter: grayscale(1);
+    }
+
+    /* Body text */
+    .resource-accodian .accordion-body {
+        font-size: 18px;
+        color: #423b3b;
+        line-height: 1.6;
+        padding: 12px 18px 16px;
+    }
+
+    /* Remove focus outline */
+    .resource-accodian .accordion-button:focus {
+        box-shadow: none;
+    }
+
+    .cta-box {
+        background: #3f9142;
+        /* green */
+        border-radius: 12px;
+        padding: 40px 20px;
+        text-align: center;
+        margin: 50px 0;
+    }
+
+    .cta-box h2 {
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .cta-box p {
+        color: #ffffff;
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .cta-actions {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .cta-actions .btn {
+        padding: 10px 22px;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+    /* White button */
+    .cta-actions .btn-light {
+        background: #ffffff;
+        color: #3f9142;
+    }
+
+    /* Outline button */
+    .cta-actions .btn-outline {
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        background: transparent;
+    }
+</style>
+
 <body>
 
     <!-- preloader -->
@@ -359,8 +755,6 @@
     </header>
 
     <main>
-
-        <!-- breadcrumb area start -->
         <div class="it-breadcrumb-area it-breadcrumb-height black-bg p-relative fix">
             <div class="it-breadcrumb-shape-1">
                 <img src="assets/img/breadcurmb/shape-1-1.png" alt="">
@@ -394,7 +788,7 @@
                                 <h3 class="it-breadcrumb-title">Resources</h3>
                             </div>
                             <div class="it-breadcrumb-list">
-                                <span><a href="index.html">Home</a></span>
+                                <span><a href="resources.html">Home</a></span>
                                 <span class="dvdr"><i>//</i></span>
                                 <span class="color">Resources</span>
                             </div>
@@ -403,778 +797,420 @@
                 </div>
             </div>
         </div>
-        <!-- breadcrumb area end -->
+        <div class="container">
 
-        <!-- about-area-start -->
-        <div class="it-about-3-area p-relative section-padding">
-            <div class="it-about-3-shape-6 d-none d-xxl-block">
-                <img src="assets/img/about/shape-3-6.png" alt="">
-            </div>
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class=" col-xl-6 col-lg-6">
-                        <div class="it-about-3-left">
-                            <div class="it-about-3-title-box">
-                                <span class="it-section-subtitle text-black">Methods, Standards & Systems Pushing
-                                    Innovation
-                                </span>
-                                <div class="it-about-3-text pb-10">
-                                    <p>eduPLAYnation programming provides a novel design method that combines Game
-                                        Theory
-                                        with Learning Science to engage and inspire students to learn through games.
-                                        This is different
-                                        from gamification insofar that it inspires intrinsic motivation, versus
-                                        incentivizing students to
-                                        meet learning objectives through extrinsic motivation or non tangible tokens and
-                                        rewards.
-                                        This unique process naturally positions students for deeper understanding based
-                                        on human
-                                        connection, versus superficial or rote learning, as players compete to reveal
-                                        and compare
-                                        narratives. If so, learning is stored across the social or prefrontal cortex, a
-                                        superior storage
-                                        system as compared to the brain region that banks data sets as isolated facts.
-                                    </p>
+            <!-- HERO -->
+            <section class="hero">
+                <small>RESOURCES</small>
+                <h1>Comprehensive guides to help you maximize the impact of AI in your classroom</h1>
 
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class=" col-xl-6 col-lg-6  wow itfadeRight" data-wow-duration=".9s" data-wow-delay=".7s">
-                        <div class="it-about-3-thumb-box p-relative text-end">
-                            <!-- <div class="it-about-3-thumb" data-mask-src="assets/img/about/Image.png"> -->
-                            <img src="assets/img/about/aboutgame.png" alt="">
-                            <!-- </div> -->
-                            <!-- <div class="it-about-3-shape-1">
-                                <img src="assets/img/about/shape-3-1.png" alt="">
-                            </div> -->
-                            <div class="it-about-3-shape-7 d-none d-md-block">
-                                <img src="assets/img/about/shape-3-2.png" alt="">
-                            </div>
-                            <div class="it-about-3-shape-8 d-none d-xxl-block">
-                                <img src="assets/img/about/shape-3-3.png" alt="">
-                            </div>
-                            <div class="it-about-3-shape-5 d-none d-md-block">
-                                <img src="assets/img/about/shape-3-5.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class=" col-xl-12 col-lg-6  wow itfadeRight mt-4" data-wow-duration=".9s" data-wow-delay=".7s">
-                  <div class="it-about-3-text pb-10">
-                     <p>Meanwhile, researchers were revealing the downfall of the K12 “balanced reading” approach,
-                        which isn’t consistent with brain science or learning science. Meaning, for the last three
-                        decades our education system has utterly failed to put students on their front foot, so to
-                        speak, with vocabulary and knowledge needed to function as healthy citizens. For example,
-                        according to NAEP, it isn’t just reading scores that have suffered—8th grade test scores that
-                        measure basic proficiencies in history and civics, respectively, have declined to 13% and 20%.
-                        By contrast, EduPLAYnation strives to align its programming with Science of Reading
-                        instructional guidelines, putting a range of core content in the foreground of general
-                        learning. This way we can help students reduce cognitive load in equivalent classes at
-                        higher grades.</p>
-
-                     <p>Learning science and innovative design notwithstanding, our vision looks even further—
-                        beyond traditional learning checklists—to a time when learners will feel safe heading into
-                        the world with joy and confidence that their brightest days are still ahead! Our programming
-                        accomplishes this goal by modeling how to separate and integrate affect and cognition.
-                        If so, working pathways that honor everyone’s humanity as communities work to transform
-                        working dilemmas. <strong>For fun.</strong></p>
-
-                  </div>
-                   -->
-                </div>
-            </div>
-        </div>
-        </div>
-        <!-- about-area-end -->
-        <section class="rangoli-welcome p-relative">
-            <div class="it-about-2-shape-3 d-none d-xl-block">
-                <img src="assets/img/testimonial/shape-1-1.png" alt="" class="opacity-25">
-            </div>
-
-            <div class="it-about-2-shape-5 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-5.png" alt="">
-            </div>
-            <div class="it-about-2-shape-6 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-6.png" alt="">
-            </div>
-            <div class="it-about-2-shape-7 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-7.png" alt="">
-            </div>
-            <div class="container welcome-row">
-
-                <div class="welcome-left">
-                    <img src="assets/img/about/PacingGuides2.png" alt="Kids Learning">
-                </div>
-
-                <div class="welcome-right">
-                    <h2 class="jam-title text-start">Pacing <span class="edu-2">Guides</span></h2>
-                    <p>
-                        JAMs can be played as stand-alone activities by small groups in 30 minutes.
-                        Nevertheless, we’ve designed JAMs to work in support of BRAVE games, as prequels
-                        and sequels between BRAVE board games. Each JAM package pdf is 16 pp. and
-                        includes (6) ELA extensions, with each extension taking approximately 30 minutes. If
-                        so, your class might take 7, 30-minute sessions to work through 1 JAM package taken
-                        from 1 series.
-
-                    </p>
-                </div>
-            </div>
-
-            <div class="container welcome-row rangoli-welcome-1">
-                <div class="welcome-right">
-                    <!-- <h2 class="jam-title text-start">Our <span class="edu-2">Vision</span></h2> -->
-                    <p>
-                        If, however, you’re playing JAMs in conjunction with board game learning, because
-                        they’re complimentary, you could play multiple JAMs within one era, moving across a
-                        series/strand, before/between board games, working through US History up to
-                        1877. If so, your class could take a month or more playing JAMs between board
-                        games. This would be a wise approach because while board game learning is
-                        expansive and detailed, fun and fast-paced, JAMs offer more space and time to
-                        complete a deep dive into certain topics that board game learning can’t.
-                        Board games take 5 one-hour sessions to play.
-                    </p>
-                </div>
-                <div class="welcome-left">
-                    <img src="assets/img/about/PacingGuides3.jpeg" alt="Kids Learning">
-                </div>
-            </div>
-        </section>
-        <section class="story-section p-relative">
-            <div class="it-about-2-shape-3 d-none d-xl-block">
-                <img src="assets/img/testimonial/shape-1-1.png" alt="" class="opacity-25">
-            </div>
-            <!-- <div class="it-about-2-ourstory-4 d-none d-xl-block">
-                <img src="assets/img/about/howtouse.png" alt="">
-            </div> -->
-
-            <div class="it-about-2-shape-6 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-6.png" alt="">
-            </div>
-            <div class="it-about-2-shape-7 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-7.png" alt="">
-            </div>
-
-            <div class="container">
-
-                <h2 class="story-title">Stacked: Unit Series & Storyarc Overviews</h2>
-                <p class="story-subtitle">To date, we have 2 series, each comprised of 10 JAMs. One JAM series for
-                    geography, another that focuses on politics & government. But don’t worry, more
-                    series are in the works!
-                </p>
-
-                <div class="story-timeline">
-
-                    <div class="story-item">
-                        <div class="story-icon pink-bg">
-                            1
-                        </div>
-                        <div class="story-content">
-                            <!-- <h3>Founding and Early Development <span>(2018–2020)</span></h3> -->
-                            <p>
-                                JAM design strives to maximize your confidence and minimize prep time needed to
-                                facilitate or participate. JAMs are intuitive and easy to master, meaning once you’ve
-                                facilitated or played one JAM, you’re ready to play ‘em all! Plus, every series is
-                                organized identically by era, but dedicated to a different set of standards, or social
-                                studies strand. Meaning, as you move from series to series, the focus of study shifts
-                                but
-                                the backdrop of historical events and players remain constant depending on which
-                                JAM # you’re playing. This framework allows us to build and explore infinite
-                                narratives connected to the same storyline, putting history into fuller context.
-                                For example, the background events for every JAM 3 are designed to explore
-                                multiple narratives culminating in the creation of the US Constitution. Whereas every
-                                JAM 4, regardless of strand/series, provides added context to explore the
-                                consolidation of the new, United States—from the backstory of the Louisiana Purchase,
-                                the War of 1812, the 1st National Bank, and more! Every JAM 5, regardless of
-                                strand/series, aims to put the 1830s into context, and so on.
-                            </p>
-
-                        </div>
-                    </div>
-
-                    <div class="story-item reverse">
-                        <div class="story-icon blue-bg">
-                            2
-                        </div>
-                        <div class="story-content">
-                            <!-- <h3>Expansion During the Pandemic <span>(2020–2021)</span></h3> -->
-                            <p>
-                                There are two exceptions to this rule of thumb: 1) every JAM 1 is an ice breaker that
-                                aims to explore a different commercial game, including its historical context, gaming
-                                mechanics, and overall purpose. The focus of every JAM 1, therefore, is to consider
-                                how a playful, dynamic approach to learning may be less daunting, yet more rigorous
-                                than traditional methods; 2) every JAM 10 falls under the schema “creativity” and
-                                uses applied learning to connect learning from JAM 2-9 to distant events, including
-                                post-history. Note, all JAMs are played by small groups, usually 4 students, and use
-                                the same format and procedures.
-                                Taken together, each and every JAM reinforces an existing pathway to deepen a
-                                student’s capacity to build connections through time, including real time.
-                            </p>
-
-                        </div>
-                    </div>
-
-                    <!-- <div class="story-item">
-                  <div class="story-icon yellow-bg">
-                     <img src="assets/img/about/Our_Story3.jpg" alt="">
-                  </div>
-                  <div class="story-content">
-                     <h3>eduPLAYnation <span>(2022–Present)</span></h3>
-                     <p>
-                        After the pandemic, teachers requested more time-sensitive materials that still provided skilled
-                        learning opportunities.
-
-                        We responded by creating JAMs: tightly-scoped, inquiry-led activities and ELA extensions that
-                        support BRAVE games. These stand-alone, short-form games proved easy to use while providing the
-                        depth and breadth teachers needed.
-
-                        Next, we built eduPLAYnation, an online platform that scales the magic of game-based learning to
-                        give every K4-5 classroom access to engaging, rigorous, and inclusive programming. We also
-                        formalized our commitment to innovation and social impact by becoming an L3C—a hybrid business
-                        entity dedicated to serving the greater good.
-                     </p>
-
-                  </div>
-               </div> -->
-
-                </div>
-
-            </div>
-
-            <div class="story-bottom-wave"></div>
-
-        </section>
-        <section class="jam-steps-section p-relative">
-
-            <div class="it-about-2-shape-4 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-7.png" alt="">
-            </div>
-            <!-- <div class="it-about-2-shape-5 d-none d-xl-block">
-            <img src="assets/img/about/shape-1-6.png" alt="">
-         </div> -->
-
-            <div class="it-about-2-shape-6 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-6.png" alt="">
-            </div>
-            <div class="it-about-2-shape-7 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-7.png" alt="">
-            </div>
-            <div class="container">
-                <!-- <h2 class="jam-title text-center">How Do You <span class="edu-2">Play a JAM?</span></h2>
-            <p class="jam-subtitle text-center">
-               Each JAM is a 30-minute adventure that transforms your classroom into an interactive learning
-               environment through 8 engaging steps.
-            </p> -->
-
-                <div class="jam-steps-grid">
-
-                    <!-- STEP 1 -->
-                    <div class="jam-step-box">
-                        <div class="jam-circle" style="background:
-#8cc4cd;">1</div>
-                        <h4>GLOBALIZATION</h4>
-                        <p>Coming Soon !!!!!!
-                        </p>
-                    </div>
-
-                    <!-- STEP 2 -->
-                    <div class="jam-step-box">
-                        <div class="jam-circle" style="background:
-#8cc4cd;">2</div>
-                        <h4>POLITICS & GOVERNMENT</h4>
-                        <p class="jam-desc clamp-text mb-0">Politics & Government is the study of the
-                            role power plays regulating nations, citizens, and society. The study of
-                            government helps us understand how our constitutions and institutions bind us. By
-                            contrast, the study of politics reveals how our decisions, actions and policies do
-                            or don’t reflect our laws and stated values.
-                        </p>
-                        <span class="read-more-btn">Read More</span>
-                    </div>
-
-                    <!-- STEP 3 -->
-                    <div class="jam-step-box">
-                        <div class="jam-circle" style="background:#8cc4cd
-;">3</div>
-                        <h4>GEOGRAPHY</h4>
-                        <p class="jam-desc clamp-text mb-0"> Geography is the study of earth's
-                            surface, as shown in the character, arrangement, resources and interrelations
-                            over the world. The morphology of the two stems, geo and graphia, or “earth
-                            writing,” inspires us to let the earth and its different regions tell its story,
-                            including how we’ve responded to manage it.
-                        </p>
-                        <span class="read-more-btn">Read More</span>
-                    </div>
-
-                    <!-- STEP 4 -->
-                    <div class="jam-step-box">
-                        <div class="jam-circle" style="background:#8cc4cd;">4</div>
-                        <h4>ECONOMICS</h4>
-                        <p>Coming Soon !!!!!!</p>
-                    </div>
-
-                    <!-- STEP 5 -->
-                    <div class="jam-step-box">
-                        <div class="jam-circle" style="background:#8cc4cd;">5</div>
-                        <h4>MACHINES & TOOLS</h4>
-                        <p>Coming Soon !!!!!!</p>
-                    </div>
-
-                    <!-- STEP 6 -->
-                    <div class="jam-step-box">
-                        <div class="jam-circle" style="background:
-#8cc4cd
-;">6</div>
-                        <h4>MEDICINE</h4>
-                        <p>Coming Soon !!!!!!
-                        </p>
-                    </div>
-
-
-                </div>
-
-
-            </div>
-        </section>
-        <section class="rangoli-welcome-1 p-relative">
-            <div class="it-about-2-shape-3 d-none d-xl-block">
-                <img src="assets/img/testimonial/shape-1-1.png" alt="" class="opacity-25">
-            </div>
-            <div class="it-about-2-shape-4 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-4.png" alt="">
-            </div>
-            <div class="it-about-2-shape-5 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-5.png" alt="">
-            </div>
-            <div class="it-about-2-shape-6 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-6.png" alt="">
-            </div>
-            <div class="it-about-2-shape-7 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-7.png" alt="">
-            </div>
-            <div class="container welcome-row">
-
-                <div class="welcome-left">
-                    <img src="assets/img/about/32669372_135a_vriw_220905.jpg" alt="Kids Learning">
-                </div>
-
-                <div class="welcome-right">
-                    <h2 class="jam-title text-start">Spiraled Learning: <span class="edu-2">Pre-game Warm-ups </span>
+                <div class="video-box " id="videoThumb" onclick="openVideoInline()">
+                    <i class="fa-solid fa-play"></i>
+                    <h2 class="fs-2">What Are JAMs?
                     </h2>
                     <p>
-                        We use the same set of 10 different schemas to set the tone for each JAM series. The
-                        goal of using schemas to guide JAMs is to help your class incorporate higher order
-                        thinking into each JAM as way to build and spiral skills needed to recognize,
-                        diagnose and transform dilemmas found in each JAM. Each schema is introduced
+                        Watch this video to learn how JAMs combine game theory with learning science to create engaging
+                        educational experiences
+                    </p>
+                </div>
+                <!-- VIDEO IFRAME (hidden initially) -->
+                <div class="video-iframe" id="videoIframe">
+                    <iframe width="100%" height="450" src="" title="YouTube video" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- <div class="understeding-jams">
+                    <h2>Understanding JAMs
+                    </h2>
+                    <p>
+                        JAMs (Joint Activity Materials) are tightly-scoped, inquiry-led activities that combine the
+                        power of
+                        game-based learning with proven educational methodologies. Each 30-minute session is designed to
+                        maximize engagement while building critical thinking skills.
+                    </p>
+                </div> -->
+            </section>
+
+            <section class="mt-20 mb-40 resource-accodian">
+                <div class="info-card">
+                    <div class="info-header">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+
+                        <div class="info-title">
+                            <h3>Methods, Standards &amp; Systems</h3>
+                            <span>Pushing Innovation</span>
+                        </div>
+                    </div>
+
+                    <p class="info-text">
+                        EduPLAYnation programming provides a novel design method that combines Game Theory with Learning
+                        Science to engage and inspire students to learn through games. This is different from
+                        gamification
+                        insofar that it inspires intrinsic motivation, versus incentivizing students to meet learning
+                        objectives through extrinsic motivation or non-tangible tokens and rewards. This unique process
+                        naturally positions students for deeper understanding based on human connection, versus
+                        superficial
+                        or rote learning, as players compete to reveal and compare narratives. If so, learning is stored
+                        across the social or prefrontal cortex, a superior storage system as compared to the brain
+                        region
+                        that banks data sets as isolated facts.
+                    </p>
+
+
+                </div>
+                <div class="info-card">
+                    <div class="info-header">
+                        <div class="info-icon">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+
+                        <div class="info-title">
+                            <h3>Pacing Guides</h3>
+                        </div>
+                    </div>
+
+                    <p class="info-text">
+                        JAMs can be played as stand-alone activities by small groups in 30 minutes. Nevertheless, we've
+                        designed JAMs to work in support of BRAVE games, as prequels and sequels between BRAVE board
+                        games.
+                        Each JAM package pdf is 16 pp. and includes (6) ELA extensions, with each extension taking
+                        approximately 30 minutes. If so, your class might take 7, 30-minute sessions to work through 1
+                        JAM
+                        package taken from 1 series.
+                    </p>
+
+                    <p class="info-text">
+                        If, however, you're playing JAMs in conjunction with board game learning, because they're
+                        complimentary, you could play multiple JAMs within one era, moving across a series/strand,
+                        before/between board games, working through US History up to 1877. If so, your class could take
+                        a
+                        month or more playing JAMs between board games. This would be a wise approach because while
+                        board
+                        game learning is expansive and detailed, fun and fast-paced, JAMs offer more space and time to
+                        complete a deep dive into certain topics that board game learning can't.
+                    </p>
+
+                    <p class="info-text">
+                        Board games take 5 one-hour sessions to play.
+                    </p>
+
+
+                </div>
+                <div class="info-card">
+
+                    <!-- Header -->
+                    <div class="info-header">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-table-cells"></i>
+                        </div>
+                        <div class="info-title">
+                            <h3>Stacked: Unit Series &amp; Storyarc Overviews</h3>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <p class="info-text">
+                        To date, we have 2 series, each comprised of 10 JAMs. One JAM series for
+                        geography, another that focuses on politics &amp; government. But don’t
+                        worry, more series are in the works!
+                    </p>
+
+                    <p class="info-text">
+                        JAM design strives to maximize your confidence and minimize prep time needed to
+                        facilitate or participate. JAMs are intuitive and easy to master, meaning once you’ve
+                        facilitated or played one JAM, you’re ready to play ‘em all! Plus, every series is
+                        organized identically by era, but dedicated to a different set of standards, or social
+                        studies strand. Meaning, as you move from series to series, the focus of study shifts but
+                        the backdrop of historical events and players remain constant depending on which
+                        JAM # you’re playing. This framework allows us to build and explore infinite
+                        narratives connected to the same storyline, putting history into fuller context.
+
+                    </p>
+
+                    <p class="info-text">
+                        There are two exceptions to this rule of thumb: 1) every JAM 1 is an ice breaker that
+                        aims to explore a different commercial game, including its historical context, gaming
+                        mechanics, and overall purpose. The focus of every JAM 1, therefore, is to consider
+                        how a playful, dynamic approach to learning may be less daunting, yet more rigorous
+                        than traditional methods; 2) every JAM 10 falls under the schema “creativity” and
+                        uses applied learning to connect learning from JAM 2-9 to distant events, including
+                        post-history. Note, all JAMs are played by small groups, usually 4 students, and use
+                        the same format and procedures.
+
+
+                    </p>
+
+
+
+
+                    <!-- Inner Note Box -->
+                    <!-- <div class="inner-note">
+                        <strong>Two exceptions to this rule:</strong>
+                        <ul>
+                            <li>
+                                Every JAM 1 is an ice breaker that explores a different commercial game,
+                                including its historical context, gaming mechanics, and overall
+                                purpose. The focus of every JAM 1 is to consider how a playful, dynamic
+                                approach to learning may be less daunting, yet more rigorous than
+                                traditional methods.
+                            </li>
+                            <li>
+                                Every JAM 10 falls under the schema “creativity” and uses applied
+                                learning to connect learning from JAM 2–9 to distant events, including
+                                post-history.
+                            </li>
+                        </ul>
+                        <p class="note-text">
+                            Note: All JAMs are played by small groups, usually 4 students, and use the
+                            same format and procedures.
+                        </p>
+                    </div> -->
+
+                    <!-- Highlight Line -->
+                    <p class="highlight-text">
+                        Taken together, each and every JAM reinforces an existing pathway to deepen
+                        a student's capacity to build connections through time, including real time.
+                    </p>
+
+                    <!-- Available Series -->
+                    <div class="series-section">
+                        <p class="series-title">Available Series:</p>
+
+                        <div class="series-item muted">
+                            <span>1. GLOBALIZATION</span>
+                            <em>(coming soon!)</em>
+                        </div>
+
+                        <div class="series-item active">
+                            <span>2. POLITICS &amp; GOVERNMENT</span>
+                            <p>
+                                Politics & Government is the study of the
+                                role power plays regulating nations, citizens, and society. The study of
+                                government helps us understand how our constitutions and institutions bind us. By
+                                contrast, the study of politics reveals how our decisions, actions and policies do
+                                or don’t reflect our laws and stated values.
+
+                            </p>
+                        </div>
+
+                        <div class="series-item active">
+                            <span>3. GEOGRAPHY</span>
+                            <p>
+                                Geography is the study of earth's
+                                surface, as shown in the character, arrangement, resources and interrelations
+                                over the world. The morphology of the two stems, geo and graphia, or “earth
+                                writing,” inspires us to let the earth and its different regions tell its story,
+                                including how we’ve responded to manage it.
+                            </p>
+                        </div>
+
+                        <div class="series-item muted">
+                            <span>4. ECONOMICS</span>
+                            <em>(coming soon!)</em>
+                        </div>
+
+                        <div class="series-item muted">
+                            <span>5. MACHINES &amp; TOOLS</span>
+                            <em>(coming soon!)</em>
+                        </div>
+
+                        <div class="series-item muted">
+                            <span>6. MEDICINE</span>
+                            <em>(coming soon!)</em>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="info-card">
+
+                    <!-- Header -->
+                    <div class="info-header">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div class="info-title">
+                            <h3>Spiraled Learning: Pre-Game Warm-Ups</h3>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <p class="info-text">
+                        We use the same set of 10 different schemas to set the tone for each JAM
+                        series. The goal of using schemas to guide JAMs is to help your class
+                        incorporate higher order thinking into each JAM as a way to build and spiral
+                        skills needed to recognize, diagnose, and transform dilemmas found in each
+                        JAM.
+                    </p>
+
+                    <p class="info-text">
+                        Each schema is introduced
                         through one of our ten (10) Pre-Game Warm-Ups. Download & print these booklets
                         double-sided, head-to-head & fold.
 
-
-                    </p>
-                    <p>
-                        The benefits of these optional mini-lessons is to deepen the quality of teaching and
-                        learning by:
                     </p>
 
-                </div>
-
-            </div>
-
-        </section>
-        <section class="unique-offer-section">
-            <div class="container">
-
-                <!-- <h2 class="unique-title">
-               What We Offer
-            </h2>
-
-            <p class="unique-subtitle">
-               Engaging, playful, and powerful learning tools designed to spark curiosity and build deeper
-               understanding.
-            </p> -->
-
-                <div class="unique-offer-row">
-
-                    <div class="unique-card">
-                        <a href="brave_games.html">
-                            <div class="card-shape shape-pink"></div>
-                            <img src="assets/img/about/icon-brave.png" class="unique-icon" alt="">
-                            <!-- <h3>BRAVE Games</h3> -->
-                            <p>
-                                Introducing underlying concepts and related vocabulary to frame
-                                content found in correlating JAMs
-                            </p>
-                            <div class="card-illustration">
-                                <img src="assets/img/about/kids-illustration-1.png" alt="">
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="unique-card">
-                        <a href="jams.html">
-                            <div class="card-shape shape-blue"></div>
-                            <img src="assets/img/about/icon-jam.png" class="unique-icon" alt="">
-                            <!-- <h3>JAMs</h3> -->
-                            <p>
-                                Supporting wonder and connections without
-                                losing focus;
-
-                            </p>
-                            <div class="card-illustration">
-                                <img src="assets/img/about/kids-illustration-2.png" alt="">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="unique-card">
-                        <a href="jams.html">
-                            <div class="card-shape shape-green"></div>
-                            <img src="assets/img/about/icon-jam.png" class="unique-icon" alt="">
-                            <!-- <h3>JAMs</h3> -->
-                            <p>
-                                Providing a framework to organize and attach details and discern
-                                patterns;
-
-                            </p>
-                            <div class="card-illustration">
-                                <img src="assets/img/about/kids-illustration-2.png" alt="">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="unique-card">
-                        <a href="jams.html">
-                            <div class="card-shape shape-yellow"></div>
-                            <img src="assets/img/about/icon-jam.png" class="unique-icon" alt="">
-                            <!-- <h3>JAMs</h3> -->
-                            <p>
-                                Preparing learners to take responsibility for rigor and group work
-                            </p>
-                            <div class="card-illustration">
-                                <img src="assets/img/about/kids-illustration-2.png" alt="">
-                            </div>
-                        </a>
+                    <!-- Inner Benefit Box -->
+                    <div class="inner-note">
+                        <strong>The benefits of these optional mini-lessons is to deepen the quality of teaching and
+                            learning by:
+                        </strong>
+                        <ul class="benefits-list">
+                            <li>Introducing underlying concepts and related vocabulary to frame content found in
+                                correlating JAMs</li>
+                            <li>Supporting wonder and connections without losing focus</li>
+                            <li>Providing a framework to organize and attach details and discern patterns</li>
+                            <li>Preparing learners to take responsibility for rigor and group work</li>
+                        </ul>
                     </div>
 
                 </div>
+                <div class="info-card">
 
-            </div>
-
-            <img src="assets/img/about/shape-1-7.png" class="unique-star-1">
-            <img src="assets/img/about/shape-1-7.png" class="unique-star-2">
-            <img src="assets/img/about/shape-1-5.png" class="unique-cloud">
-
-        </section>
-        <!-- How Do You Play a JAM? -->
-        <div class="it-team-2-area p-relative fix pb-110">
-            <!-- <div class="it-team-2-shape-3 d-none d-xl-block">
-                <img src="assets/img/hero/shape-4-2.png" alt="">
-            </div>
-            <div class="it-team-2-shape-4 d-none d-xl-block">
-                <img src="assets/img/team/shape-2-2.png" alt="">
-            </div> -->
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="it-team-2-title-box text-center">
-                            <h3 class="it-section-title pb-10 text-center">
-                                Schema Guide
-
-                                <!-- <span class="edu-2">Government</span> -->
-                            </h3>
-                            <p class="  m-auto" style="width: 80%;">Each JAM series consists of 10 unique JAMs, stacked
-                                chronologically, while each JAM
-                                series spirals through the same set of 10 correlating schemas. Schemas are
-                                conceptual frameworks that cue higher order thinking and frame the GUIDING
-                                QUESTIONS section found in each JAM. In other words, while we aim to build infinite
-                                JAMs, we’ll always build them in sets of 10 around the same 10 schemas:</p>
+                    <!-- Header -->
+                    <div class="info-header">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <div class="info-title">
+                            <h3>Schema Guide</h3>
                         </div>
                     </div>
-                </div>
 
-                <div class="row gy-4 mt-40">
+                    <!-- Intro -->
+                    <p class="info-text">
+                        Each JAM series consists of 10 unique JAMs, stacked chronologically, while each JAM series
+                        spirals through the same set of 10 correlating schemas. Schemas are conceptual frameworks that
+                        cue higher order thinking and frame the GUIDING QUESTIONS section found in each JAM. In other
+                        words, while we aim to build infinite JAMs, we'll always build them in sets of 10 around the
+                        same 10 schemas:
+                    </p>
 
-                    <!-- CARD 1 -->
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="it-team-2-item text-center jam-card-box1 cat-empires p-relative">
-                            <!-- Series badge outside mask -->
-                            <!-- <div class="series-badge">
-                                 <img src="assets/img/about/New_Project__38_-removebg-preview.png" />
-                                 <div class="series-text">Series #1</div>
-                              </div> -->
 
-                            <!-- <div class="it-team-2-thumb-box p-relative"> -->
-                            <!-- Corner Icon -->
-                            <!-- <div class="corner-icons-jam">
-                                    <img class="corner-circle-jam"
-                                        src="assets/img/logo/New_Project__43_-removebg-preview.png" alt="">
-                                </div>
-                                <div class="series-badge">
-                                    <img src="assets/img/about/New_Project__38_-removebg-preview.png" />
 
-                                </div> -->
-                            <!-- <div class="series-text">Empires</div> -->
-                            <!-- Tag OUTSIDE the mask so it shows -->
+                    <!-- Schema List -->
+                    <div class="schema-list">
 
-                            <!-- </div> -->
-
-                            <div class="it-team-2-author-info mt-10">
-                                <div class="jam-type-tag-1 " style="background-color: #ab312b;">Game Theory</div>
-                                <!-- <h4 class="jam-title-1">GAME THEORY</h4> -->
-                                <p class="jam-desc clamp-text mb-0 clamp-text mb-0">
+                        <div class="schema-item">
+                            <span class="schema-num">1</span>
+                            <div>
+                                <h4>GAME THEORY</h4>
+                                <p>
                                     A branch of mathematics that uses models to explore how interdependent players
                                     make decisions based on a set of constraints and variables
                                 </p>
-                                <span class="read-more-btn">Read More</span>
-
-
-                            </div>
-
-                            <div class="it-team-2-shape-1">
-                                <img src="assets/img/team/shape-1-1.png" alt="">
                             </div>
                         </div>
-                    </div>
 
-                    <!-- CARD 2 -->
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="it-team-2-item text-center jam-card-box1 cat-context">
-                            <!-- <div class="it-team-2-thumb-box p-relative">
-                                
-                                <div class="series-badge">
-                                    <img src="assets/img/about/New_Project__38_-removebg-preview.png" />
+                        <div class="schema-item">
+                            <span class="schema-num">2</span>
+                            <div>
+                                <h4>CONTEXT</h4>
+                                <p>Set of circumstances/facts that surround an event or set of events.</p>
+                            </div>
+                        </div>
 
-                                </div>
-                                <div class="series-text">Series #2</div>
-                                <div class="jam-type-tag" style="background-color: #e3646d;">Politics & Government
-                                </div>
-                            </div> -->
+                        <div class="schema-item">
+                            <span class="schema-num">3</span>
+                            <div>
+                                <h4>PERSPECTIVE</h4>
+                                <p>Taking all relevant data into account, including reader response.</p>
+                            </div>
+                        </div>
 
-                            <div class="it-team-2-author-info mt-10">
-                                <div class="jam-type-tag-1 " style="background-color: #d26953;">Context</div>
-                                <!-- <h4 class="jam-title-1">You Are Not the Center of the Universe</h4> -->
-                                <p class="jam-desc clamp-text mb-0">
-                                    Set of circumstances/facts that surround an event or set of events
+                        <div class="schema-item">
+                            <span class="schema-num">4</span>
+                            <div>
+                                <h4>CHANGE</h4>
+                                <p>
+                                    To make the form, nature, content, or future course of something
+                                    different from what it is or would be if left alone.
                                 </p>
-                                <span class="read-more-btn">Read More</span>
-
-                            </div>
-
-                            <div class="it-team-2-shape-1">
-                                <img src="assets/img/team/shape-1-1.png" alt="">
                             </div>
                         </div>
-                    </div>
 
-                    <!-- CARD 3 -->
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="it-team-2-item text-center jam-card-box1 cat-economics">
-                            <!-- <div class="it-team-2-thumb-box p-relative">
-                                <div class="series-badge">
-                                    <img src="assets/img/about/New_Project__38_-removebg-preview.png" />
+                        <div class="schema-item">
+                            <span class="schema-num">5</span>
+                            <div>
+                                <h4>CONFLICT</h4>
+                                <p>Functional tension created by disagreement, clash, or variance.</p>
+                            </div>
+                        </div>
 
-                                </div>
-                                <div class="series-text">Series #3</div>
-                                <div class="jam-type-tag" style="background-color: #f59831;">Geography</div>
-                            </div> -->
+                        <div class="schema-item">
+                            <span class="schema-num">6</span>
+                            <div>
+                                <h4>RIGHTS</h4>
+                                <p>God-given or government-given privileges.</p>
+                            </div>
+                        </div>
 
-                            <div class="it-team-2-author-info mt-10">
-                                <div class="jam-type-tag-1 " style="background-color: #c65519;">Perspective</div>
-                                <!-- <h4 class="jam-title-1">Aloutte, Gentille Aloutte</h4> -->
-                                <p class="jam-desc clamp-text mb-0">
-                                    Taking all relevant data into account, including reader response
-
+                        <div class="schema-item">
+                            <span class="schema-num">7</span>
+                            <div>
+                                <h4>CONNECTION</h4>
+                                <p>
+                                    People, things, or systems that connect and keep other people, things,
+                                    and systems linked up through communication and interdependent
+                                    relationships.
                                 </p>
-                                <span class="read-more-btn">Read More</span>
-
-                            </div>
-
-                            <div class="it-team-2-shape-1">
-                                <img src="assets/img/team/shape-1-1.png" alt="">
                             </div>
                         </div>
-                    </div>
 
-                    <!-- CARD 4 -->
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="it-team-2-item text-center jam-card-box111 cat-technology">
+                        <div class="schema-item">
+                            <span class="schema-num">8</span>
+                            <div>
+                                <h4>COOPERATION</h4>
+                                <p>Mutual and reinforcing efforts.</p>
+                            </div>
+                        </div>
 
-
-                            <div class="it-team-2-author-info mt-10">
-                                <div class="jam-type-tag-1 " style="background-color: #cbab2d
-;">Change</div>
-                                <!-- <h4 class="jam-title-1">Nation 2 Nation</h4> -->
-                                <p class="jam-desc clamp-text mb-0">
-                                    To make the form, nature, content, future course of something different from what it
-                                    is
-                                    or from what it would be if left alone
+                        <div class="schema-item">
+                            <span class="schema-num">9</span>
+                            <div>
+                                <h4>TRUST</h4>
+                                <p>
+                                    Confidence, expectation, or belief in something as true, certain, or
+                                    reliable.
                                 </p>
-                                <span class="read-more-btn">Read More</span>
-
-                            </div>
-
-                            <div class="it-team-2-shape-1">
-                                <img src="assets/img/team/shape-1-1.png" alt="">
                             </div>
                         </div>
-                    </div>
 
-                    <!-- CARD 5 -->
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="it-team-2-item text-center jam-card-box111 cat-geography">
-                            <div class="it-team-2-author-info mt-10">
-                                <div class="jam-type-tag-1 " style="background-color: #526e23;">Conflict</div>
-                                <!-- <h4 class="jam-title-1">Twelve Knots</h4> -->
-                                <p class="jam-desc clamp-text mb-0">
-                                    Functional tension created by disagreement, clash, or variance
-                                </p>
-                                <span class="read-more-btn">Read More</span>
-
-
-
-                                <div class="it-team-2-shape-1">
-                                    <img src="assets/img/team/shape-1-1.png" alt="">
-                                </div>
+                        <div class="schema-item">
+                            <span class="schema-num">10</span>
+                            <div>
+                                <h4>CREATIVITY</h4>
+                                <p>Ability to bring forth through artistry, genius, imagination.</p>
                             </div>
                         </div>
+
                     </div>
 
-                    <!-- CARD 6 -->
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="it-team-2-item text-center jam-card-box111 cat-medicine">
-                            <div class="it-team-2-author-info mt-10">
-                                <div class="jam-type-tag-1 " style="background-color: #24594a;">Rights</div>
-                                <p class="jam-desc clamp-text mb-0">
-                                    God-given or government-given privileges
-                                </p>
-                                <span class="read-more-btn">Read More</span>
-
-
-                            </div>
-
-                            <div class="it-team-2-shape-1">
-                                <img src="assets/img/team/shape-1-1.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CARD 7 -->
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="it-team-2-item text-center jam-card-box111 cat-father">
-
-
-                            <div class="it-team-2-author-info mt-10">
-                                <div class="jam-type-tag-1 " style="background-color: #4997a3;">Cooperation</div>
-                                <p class="jam-desc clamp-text mb-0">
-                                    Mutual and reinforcing efforts
-
-                                </p>
-                                <span class="read-more-btn">Read More</span>
-
-                            </div>
-
-                            <div class="it-team-2-shape-1">
-                                <img src="assets/img/team/shape-1-1.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CARD 8 -->
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="it-team-2-item text-center jam-card-box111 cat-connection">
-
-
-                            <div class="it-team-2-author-info mt-10">
-                                <div class="jam-type-tag-1 " style="background-color: #223470;">Connection</div>
-                                <p class="jam-desc clamp-text mb-0">
-                                    People, things, or systems that connect and keep other people, things and systems
-                                    linked up; through communication and interdependent relationships
-
-                                </p>
-                                <span class="read-more-btn">Read More</span>
-
-                            </div>
-
-                            <div class="it-team-2-shape-1">
-                                <img src="assets/img/team/shape-1-1.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CARD 9 -->
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="it-team-2-item text-center jam-card-box111 cat-trust">
-
-
-                            <div class="it-team-2-author-info mt-10">
-                                <div class="jam-type-tag-1 " style="background-color: #56317d
-;">Trust</div>
-                                <p class="jam-desc clamp-text mb-0">
-                                    Confidence, expectation, or belief in something as true, certain or reliable
-                                </p>
-                                <span class="read-more-btn">Read More</span>
-
-                            </div>
-
-                            <div class="it-team-2-shape-1">
-                                <img src="assets/img/team/shape-1-1.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CARD 10 -->
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="it-team-2-item text-center jam-card-box111 cat-creativity">
-
-
-                            <div class="it-team-2-author-info mt-10">
-                                <div class="jam-type-tag-1 " style="background-color: 
-#8e3165;">Creativity</div>
-                                <p class="jam-desc clamp-text mb-0">
-                                    Ability to bring forth through artistry, genius, imagination
-                                </p>
-                                <span class="read-more-btn">Read More</span>
-
-                            </div>
-
-                            <div class="it-team-2-shape-1">
-                                <img src="assets/img/team/shape-1-1.png" alt="">
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </div>
+                <div class="info-card">
 
-        <section class="rangoli-welcome-1 p-relative">
-            <div class="it-about-2-shape-3 d-none d-xl-block">
-                <img src="assets/img/testimonial/shape-1-1.png" alt="" class="opacity-25">
-            </div>
+                    <!-- Header -->
+                    <div class="info-header">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <div class="info-title">
+                            <h3>5E Instructional Model</h3>
+                        </div>
+                    </div>
 
-            <div class="it-about-2-shape-5 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-5.png" alt="">
-            </div>
-            <div class="it-about-2-shape-6 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-6.png" alt="">
-            </div>
-            <div class="it-about-2-shape-7 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-7.png" alt="">
-            </div>
-            <div class="container welcome-row">
-
-                <div class="welcome-left">
-                    <img src="assets/img/about/Instructionalmodel.png" alt="Kids Learning">
-                </div>
-
-                <div class="welcome-right">
-                    <h2 class="jam-title text-start">5e
-                        <span class="edu-2"> Instructional Model</span>
-                    </h2>
-                    <p>
+                    <!-- Intro Text -->
+                    <p class="info-text">
                         eduPLAYnation aims to bring “science” into the social sciences in a number of way,
                         whether through Game Theory (design), or the scientific method (modeling). Why
                         should students strive to view humanity with an objective lens if humans are inherently
                         subjective and act on whims, emotions, myths, and groupthink?
                     </p>
-                    <p>
+
+                    <p class="info-text">
                         Humans survive and thrive on a sense of belonging—to their families, friends, and
                         primary cultures. Yet this doesn’t mean to the exclusion of “other.” Often, learning
                         about and collaborating with people outside our immediate circles deepens our
@@ -1184,371 +1220,160 @@
                         having reflected on affect, we use it to cue cognition to understand the source of all
                         actions. This includes answering Who, Where, What, Where, How and Why.
                     </p>
-                    <p>
+
+                    <p class="info-text">
                         In sum, recognizing and honoring the subjective, or inherent humanity, plays a key
                         role in enhancing our capacity to reason. Therefore, to remain as objective as is
                         humanly possible, we apply the 5E model. This will enhance the strength of any JAM
                         (the model) and reinforce existing academic pathways to support critical thinking:
+
                     </p>
-                </div>
-            </div>
 
-        </section>
-        <section class="brave-steps p-relative">
-            <div class="it-about-2-shape-4 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-7.png" alt="">
-            </div>
-            <div class="it-about-2-shape-7 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-7.png" alt="">
-            </div>
-            <div class="steps-wrapper container">
-                <!-- <h3 class="it-section-title pb-30 text-center">BRAVE <span class="edu-2">Games</span></h3> -->
 
-                <div class="d-flex justify-content-between row g-4">
-                    <!-- STEP 1 -->
-                    <!-- STEP 1 -->
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="step-box-1">
-                            <div class="step-number">01</div>
-                            <div class="step-content">
-                                <h4>ENGAGE</h4>
-                                <p><strong>Print</strong> pp. 1-4 of any JAM package (16 pp. pdf) to find the
+
+                    <!-- Accordion -->
+                    <div class="accordion" id="fiveEAccordion">
+
+                        <!-- ENGAGE -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#engage" aria-expanded="true">
+                                    ENGAGE
+                                </button>
+                            </h2>
+                            <div id="engage" class="accordion-collapse collapse show" data-bs-parent="#fiveEAccordion">
+                                <div class="accordion-body">
+                                    Print pp. 1-4 of any JAM package (16 pp. pdf) to find the
                                     JAM’s title, overview, learning focus and goal; the HOOK
                                     sparks intrigue; GUIDING QUESTIONS clarify questions; find
                                     the list of ELA extensions, schedule for following scientific
-                                    method; helpful tips</p>
+                                    method; helpful tips.
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- STEP 2 -->
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="step-box-1">
-                            <div class="step-number">02</div>
-                            <div class="step-content">
-                                <h4>EXPLORE</h4>
-                                <p>Each JAM consists of a 30-minute small group exercise that
+
+                        <!-- EXPLORE -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#explore">
+                                    EXPLORE
+                                </button>
+                            </h2>
+                            <div id="explore" class="accordion-collapse collapse" data-bs-parent="#fiveEAccordion">
+                                <div class="accordion-body">
+                                    Each JAM consists of a 30-minute small group exercise that
                                     offers a tightly-scoped, inquiry-led investigation of the past.
                                     Divide class into groups of 4, then deliver one unique
-                                    role/player to annotate and answer key questions</p>
+                                    role/player to annotate and answer key questions.
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- STEP 3 -->
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="step-box-1">
-                            <div class="step-number">03</div>
-                            <div class="step-content">
-                                <h4>EXPLAIN</h4>
-                                <p><strong>In the middle</strong> of each JAM, bring small groups back into one
+                        <!-- EXPLAIN -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#explain">
+                                    EXPLAIN
+                                </button>
+                            </h2>
+                            <div id="explain" class="accordion-collapse collapse" data-bs-parent="#fiveEAccordion">
+                                <div class="accordion-body">
+                                    In the middle of each JAM, bring small groups back into one
                                     large group for 10 minutes to answer GUIDING
                                     QUESTIONS provided on p.2 of each JAM package to
-                                    clarify details and answer questions</p>
+                                    clarify details and answer questions.
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- STEP 4 -->
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="step-box-1">
-                            <div class="step-number">04</div>
-                            <div class="step-content">
-                                <h4>ELABORATE</h4>
-                                <p>Small groups return to committee to collaborate filling out
+                        <!-- ELABORATE -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#elaborate">
+                                    ELABORATE
+                                </button>
+                            </h2>
+                            <div id="elaborate" class="accordion-collapse collapse" data-bs-parent="#fiveEAccordion">
+                                <div class="accordion-body">
+                                    Small groups return to committee to collaborate filling out
                                     pp. 9 & 10, one linear and one-non-linear graphic
                                     organizer that illustrates how narratives overlap.
-                                </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="step-box-1">
-                            <div class="step-number">05</div>
-                            <div class="step-content">
-                                <h4>EVALUATE</h4>
-                                <p>Each JAM packages offers six unique ELA extensions,
+
+                        <!-- EVALUATE -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#evaluate">
+                                    EVALUATE
+                                </button>
+                            </h2>
+                            <div id="evaluate" class="accordion-collapse collapse" data-bs-parent="#fiveEAccordion">
+                                <div class="accordion-body">
+                                    Each JAM packages offers six unique ELA extensions,
                                     science-backed writing strategies in novel and traditional
                                     contexts to help students process and reflect learning.
-                                </p>
+
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
-            </div>
-        </section>
+                <div class="info-card">
 
-        <section class="inclusive-by-design">
-            <div class="container">
-
-                <!-- <h2 class="unique-title">
-               What We Offer
-            </h2>
-
-            <p class="unique-subtitle">
-               Engaging, playful, and powerful learning tools designed to spark curiosity and build deeper
-               understanding.
-            </p> -->
-
-                <div class="unique-offer-row">
-
-                    <div class="unique-card">
-                        <a href="brave_games.html">
-                            <div class="card-shape shape-pink"></div>
-                            <img src="assets/img/about/icon-brave.png" class="unique-icon" alt="">
-                            <h3><span class="edu-font-1">eduplaynation:</span> Inclusive By Design
-                            </h3>
-                            <p>
-                                Elephanta Education believes teaching and learning are reciprocal tasks. This means
-                                we don’t preach inclusivity and civility, our method design hinges on it! Our novel
-                                design method ensures every player takes responsibility for group learning. In that
-                                sense, each students plays a key role in terms of strengthening the groups capacity to
-                                build context, increase perspective and assess complexity.
-                                The same kind of reciprocity exists between the reader and their text. Whereby
-                                empathy cues cognition, asking students to consider WHO, WHERE, WHAT, WHEN,
-                                HOW, and WHY.
-
-                            </p>
-                            <div class="card-illustration">
-                                <img src="assets/img/about/kids-illustration-1.png" alt="">
-                            </div>
-                        </a>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <img src="assets/img/about/shape-1-7.png" class="unique-star-1">
-            <img src="assets/img/about/shape-1-7.png" class="unique-star-2">
-            <img src="assets/img/about/shape-1-5.png" class="unique-cloud">
-
-        </section>
-        <div class="it-price-area pb-50 p-relative">
-            <div class="it-about-2-shape-3 d-none d-xl-block">
-                <img src="assets/img/testimonial/shape-1-1.png" alt="" class="opacity-25">
-            </div>
-            <div class="it-about-2-shape-4 d-none d-xl-block">
-                <img src="assets/img/breadcurmb/shape-1-1.png" alt="">
-            </div>
-            <div class="it-about-2-shape-5 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-5.png" alt="">
-            </div>
-            <div class="it-about-2-shape-6 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-6.png" alt="">
-            </div>
-            <div class="it-about-2-shape-7 d-none d-xl-block">
-                <img src="assets/img/about/shape-1-7.png" alt="">
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="it-price-title text-center mb-50">
-                            <h3 class="it-section-title pb-30 text-center">Pricing & <span
-                                    class="edu-2">Membership</span></h3>
-                            <!-- <span class="it-section-subtitle"></span>
-                     <h3 class="it-section-title"></h3> -->
+                    <!-- Header -->
+                    <div class="info-header">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-user-group"></i>
                         </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-xl-4 col-lg-4 col-md-6 mb-0  wow itfadeUp" data-wow-duration=".9s"
-                        data-wow-delay=".3s">
-                        <div class="it-price-item it-price-item-bg-1 p-relative text-center">
-                            <div class="it-price-shape-1">
-                                <span>
-                                    <svg width="39" height="59" viewBox="0 0 39 59" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M20.7868 57.6503L22.5668 46.0903L17.9668 46.4503L19.0668 57.6803C19.6568 57.5803 20.2268 57.5703 20.7868 57.6503Z"
-                                            fill="#1F90A2" stroke="#021316" stroke-width="1.0301" stroke-miterlimit="10"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path
-                                            d="M21.5574 57.8102L21.6774 46.6302L19.0674 46.8302L19.6174 57.6002C20.2874 57.5602 20.9474 57.6302 21.5574 57.8102Z"
-                                            fill="white" stroke="#021316" stroke-width="1.0301" stroke-miterlimit="10"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path
-                                            d="M6.27721 11.4503C8.53721 15.5303 6.73721 16.2203 2.68721 24.1103C-1.36279 32.0003 0.367214 41.8303 0.367214 41.8303C0.367214 41.8303 14.8672 54.3003 38.1572 40.4603C38.1572 40.4603 38.2972 33.4903 35.2772 26.0503C32.2572 18.6103 26.0072 14.0803 29.0172 11.1603"
-                                            fill="#021316" />
-                                        <path
-                                            d="M7.24734 15.1204C9.74734 17.5804 18.2973 22.0904 28.6673 14.5104C28.6673 14.5104 27.4273 12.6404 29.9973 10.3604C29.9973 10.3604 15.7473 16.3504 6.27734 11.4504C6.28734 11.4504 7.88734 13.6304 7.24734 15.1204Z"
-                                            fill="#1C2526" />
-                                        <path
-                                            d="M1.33691 5.88025C1.33691 5.88025 1.81692 10.1202 3.30692 11.6602C4.78692 13.2002 20.9269 17.1002 31.6769 11.0202C31.6769 11.0202 34.6769 10.6902 33.8669 6.07025"
-                                            fill="#021316" />
-                                        <path
-                                            d="M34.0677 4.9203C34.1677 7.8103 26.9177 10.2903 17.8677 10.4603C8.81767 10.6403 1.40766 8.4403 1.30766 5.5503C1.20766 2.6603 8.45767 0.180303 17.5077 0.0103034C26.5477 -0.169697 33.9677 2.0303 34.0677 4.9203Z"
-                                            fill="#1C2526" />
-                                    </svg>
-                                </span>
-                            </div>
-                            <div class="it-price-top">
-                                <h4 class="it-price-title">Teacher Plan</h4>
-                                <span>$99 / year</span>
-                            </div>
-                            <div class="it-price-list mb-30">
-                                <ul>
-                                    <li>Access to all JAM lessons (10+ modules)</li>
-                                    <li>Unlimited lesson downloads</li>
-                                    <li>Classroom-ready activities & extensions</li>
-                                    <li>Full Geography JAM Series (MVP)</li>
-                                    <li>New JAMs added automatically</li>
-                                    <li>Printable teacher guides</li>
-                                    <li>Email support</li>
-                                    <li>Access on any device</li>
-                                </ul>
-                            </div>
-                            <div class="it-hero-3-button">
-                                <a class="it-btn white-bg circle-effect" href="contact.html">
-                                    <span>book a visit
-                                        <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M13.6875 7.71875C14.0938 7.34375 14.0938 6.6875 13.6875 6.3125L8.6875 1.3125C8.3125 0.90625 7.65625 0.90625 7.28125 1.3125C6.875 1.6875 6.875 2.34375 7.28125 2.71875L10.5625 6H1C0.4375 6 0 6.46875 0 7C0 7.5625 0.4375 8 1 8H10.5625L7.28125 11.3125C6.875 11.6875 6.875 12.3438 7.28125 12.7188C7.65625 13.125 8.3125 13.125 8.6875 12.7188L13.6875 7.71875Z"
-                                                fill="currentcolor" />
-                                        </svg>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 mb-0  wow itfadeUp" data-wow-duration=".9s"
-                        data-wow-delay=".5s">
-                        <div class="it-price-item it-price-item-bg-2 p-relative text-center">
-                            <div class="it-price-shape-1">
-                                <span>
-                                    <svg width="39" height="59" viewBox="0 0 39 59" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M20.7868 57.6503L22.5668 46.0903L17.9668 46.4503L19.0668 57.6803C19.6568 57.5803 20.2268 57.5703 20.7868 57.6503Z"
-                                            fill="#1F90A2" stroke="#021316" stroke-width="1.0301" stroke-miterlimit="10"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path
-                                            d="M21.5574 57.8102L21.6774 46.6302L19.0674 46.8302L19.6174 57.6002C20.2874 57.5602 20.9474 57.6302 21.5574 57.8102Z"
-                                            fill="white" stroke="#021316" stroke-width="1.0301" stroke-miterlimit="10"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path
-                                            d="M6.27721 11.4503C8.53721 15.5303 6.73721 16.2203 2.68721 24.1103C-1.36279 32.0003 0.367214 41.8303 0.367214 41.8303C0.367214 41.8303 14.8672 54.3003 38.1572 40.4603C38.1572 40.4603 38.2972 33.4903 35.2772 26.0503C32.2572 18.6103 26.0072 14.0803 29.0172 11.1603"
-                                            fill="#F59831" />
-                                        <path
-                                            d="M7.24734 15.1204C9.74734 17.5804 18.2973 22.0904 28.6673 14.5104C28.6673 14.5104 27.4273 12.6404 29.9973 10.3604C29.9973 10.3604 15.7473 16.3504 6.27734 11.4504C6.28734 11.4504 7.88734 13.6304 7.24734 15.1204Z"
-                                            fill="#FDAF5A" />
-                                        <path
-                                            d="M1.33691 5.88025C1.33691 5.88025 1.81692 10.1202 3.30692 11.6602C4.78692 13.2002 20.9269 17.1002 31.6769 11.0202C31.6769 11.0202 34.6769 10.6902 33.8669 6.07025"
-                                            fill="#F59831" />
-                                        <path
-                                            d="M34.0677 4.9203C34.1677 7.8103 26.9177 10.2903 17.8677 10.4603C8.81767 10.6403 1.40766 8.4403 1.30766 5.5503C1.20766 2.6603 8.45767 0.180303 17.5077 0.0103034C26.5477 -0.169697 33.9677 2.0303 34.0677 4.9203Z"
-                                            fill="#FDAF5A" />
-                                    </svg>
-                                </span>
-                            </div>
-                            <div class="it-price-top">
-                                <h4 class="it-price-title">School Plan</h4>
-                                <span>$500 / year</span>
-                            </div>
-                            <div class="it-price-list mb-30">
-                                <ul>
-                                    <li>Everything in Teacher Plan</li>
-                                    <li>Access for up to 20 teachers</li>
-                                    <li>School-wide JAM library</li>
-                                    <li>Admin dashboard & reporting</li>
-                                    <li>Dedicated onboarding session</li>
-                                    <li>Priority customer support</li>
-                                    <li>Access to upcoming JAM series</li>
-                                    <li>Bonus ELA & Social Studies extensions</li>
-                                </ul>
-                            </div>
-                            <div class="it-hero-3-button">
-                                <a class="it-btn white-bg circle-effect" href="contact.html">
-                                    <span>book a visit
-                                        <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M13.6875 7.71875C14.0938 7.34375 14.0938 6.6875 13.6875 6.3125L8.6875 1.3125C8.3125 0.90625 7.65625 0.90625 7.28125 1.3125C6.875 1.6875 6.875 2.34375 7.28125 2.71875L10.5625 6H1C0.4375 6 0 6.46875 0 7C0 7.5625 0.4375 8 1 8H10.5625L7.28125 11.3125C6.875 11.6875 6.875 12.3438 7.28125 12.7188C7.65625 13.125 8.3125 13.125 8.6875 12.7188L13.6875 7.71875Z"
-                                                fill="currentcolor" />
-                                        </svg>
-                                    </span>
-                                </a>
-                            </div>
+                        <div class="info-title">
+                            <h3>EduPLAYnation: Inclusive by Design</h3>
                         </div>
                     </div>
 
+                    <!-- Content -->
+                    <p class="info-text">
+                        Elephanta Education believes teaching and learning are reciprocal tasks. This means
+                        we don’t preach inclusivity and civility, our method design hinges on it! Our novel
+                        design method ensures every player takes responsibility for group learning. In that
+                        sense, each students plays a key role in terms of strengthening the groups capacity to
+                        build context, increase perspective and assess complexity.
+
+                    </p>
+                    <p class="info-text">
+                        The same kind of reciprocity exists between the reader and their text. Whereby
+                        empathy cues cognition, asking students to consider WHO, WHERE, WHAT, WHEN,
+                        HOW, and WHY.
+
+
+                    </p>
+
+
                 </div>
-            </div>
+                <div class="cta-box">
+                    <h2>Ready to Get Started?</h2>
+                    <p>
+                        Explore our JAM series and see how game-based learning can transform your classroom
+                    </p>
+
+                    <div class="cta-actions">
+                        <a href="jams.html" class="btn btn-light">Browse JAMs</a>
+                        <a href="subscribe.html" class="btn btn-outline">View Pricing</a>
+                    </div>
+                </div>
+
+            </section>
+
         </div>
-<section class="pb-50">
-       <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="it-price-title text-center mb-20">
-                            <h3 class="it-section-title text-center">Professional <span
-                                    class="edu-2">Development</span></h3>
-                            <!-- <span class="it-section-subtitle"></span>
-                     <h3 class="it-section-title"></h3> -->
-                        </div>
-                    </div>
-                </div>
-  <iframe
-    width="100%"
-    height="450"
-    src="https://www.youtube.com/embed/CEepmMpSdzU"
-    title="YouTube video"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-  </div>
-</section>
 
-        <!-- <section class="programs-section">
-            <div class="container">
-
-                <h2 class="programs-title">What Makes Us Different</h2>
-
-
-                <div class="programs-row">
-
-                    <div class="program-card pink">
-                        <h3>Game-Based Learning with Purpose</h3>
-                        <img src="assets/img/about/Game-Based.jpg" alt="">
-                        <p>Long-form and short-form experiences that merge story, strategy, and academic rigor.</p>
-
-                    </div>
-
-                    <div class="program-card blue">
-                        <h3>Multiple Viewpoints, One Shared Story</h3>
-                        <img src="assets/img/about/One_Shared_Story.jpg" alt="">
-                        <p>Students explore history through perspectives that build empathy and understanding.</p>
-                    </div>
-
-                    <div class="program-card yellow">
-                        <h3>Aligned with Science of Reading</h3>
-                        <img src="assets/img/about/Science_of_Reading.jpg" alt="">
-                        <p>Knowledge-rich content that strengthens comprehension and reduces cognitive load</p>
-                    </div>
-
-                    <div class="program-card green">
-                        <h3> Transformative Outcomes
-                        </h3>
-                        <img src="assets/img/about/Transformative_Outcomes .jpg" alt="">
-                        <p>Students think deeply, collaborate meaningfully, and gain confidence in both their voice and
-                            potential.</p>
-                    </div>
-                     <div class="program-card green">
-                        <h3> Transformative Outcomes
-                        </h3>
-                        <img src="assets/img/about/Transformative_Outcomes .jpg" alt="">
-                        <p>Students think deeply, collaborate meaningfully, and gain confidence in both their voice and
-                            potential.</p>
-                    </div>
-
-                </div>
-            </div>
-
-            <svg class="program-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
-                <path d="M0,80 C360,30 720,140 1440,80 L1440,120 L0,120 Z" fill="#eafcff" />
-            </svg>
-        </section> -->
     </main>
 
     <footer>
@@ -1740,6 +1565,23 @@
 
         highlightEduPlaynation();
     </script>
+   <script>
+  function openVideoInline() {
+    const thumb = document.getElementById("videoThumb");
+    const videoContainer = document.getElementById("videoIframe");
+    const iframe = videoContainer.querySelector("iframe");
+
+    // hide thumbnail
+    thumb.style.display = "none";
+
+    // show iframe
+    videoContainer.style.display = "block";
+
+    // load & autoplay video
+    iframe.src = "https://www.youtube.com/embed/CEepmMpSdzU?autoplay=1";
+  }
+</script>
+
 
 </body>
 
