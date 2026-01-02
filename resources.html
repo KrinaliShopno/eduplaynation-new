@@ -478,7 +478,7 @@
                     </div>
 
                     <p class="info-text">
-                        EduPLAYnation programming provides a novel design method that combines Game Theory with Learning
+                     <span class="edu-font-2">eduPLAYnation</span> programming provides a novel design method that combines Game Theory with Learning
                         Science to engage and inspire students to learn through games. This is different from
                         gamification
                         insofar that it inspires intrinsic motivation, versus incentivizing students to meet learning
@@ -835,7 +835,7 @@
 
                     <!-- Intro Text -->
                     <p class="info-text">
-                        eduPLAYnation aims to bring “science” into the social sciences in a number of way,
+                         <span class="edu-font-2">eduPLAYnation</span> aims to bring “science” into the social sciences in a number of way,
                         whether through Game Theory (design), or the scientific method (modeling). Why
                         should students strive to view humanity with an objective lens if humans are inherently
                         subjective and act on whims, emotions, myths, and groupthink?
@@ -966,7 +966,7 @@
                             <i class="fa-solid fa-user-group"></i>
                         </div>
                         <div class="info-title">
-                            <h3>EduPLAYnation: Inclusive by Design</h3>
+                            <h3> <span class="edu-font-2">eduPLAYnation</span>: Inclusive by Design</h3>
                         </div>
                     </div>
 
@@ -1180,22 +1180,7 @@
             });
         });
     </script>
-    <script>
-        function highlightEduPlaynation() {
-            const elements = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, span, div");
 
-            elements.forEach(el => {
-                if (el.children.length === 0 && el.innerHTML.includes("eduPLAYnation")) {
-                    el.innerHTML = el.innerHTML.replace(
-                        /eduPLAYnation/g,
-                        '<span class="edu-font">eduPLAYnation</span>'
-                    );
-                }
-            });
-        }
-
-        highlightEduPlaynation();
-    </script>
    <script>
   function openVideoInline() {
     const thumb = document.getElementById("videoThumb");
