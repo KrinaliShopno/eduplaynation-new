@@ -2389,6 +2389,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
 .it-custom-accordion .collapsed {
   position: relative;
   z-index: 99;
+  text-transform: capitalize;
   /* background-color: var(--it-theme-2); */
 }
 
